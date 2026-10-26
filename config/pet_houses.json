@@ -1,0 +1,455 @@
+{
+  "dog_house": {
+    "name": "狗屋",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "outdoor"
+    ],
+    "price": 2000,
+    "max_level": 3,
+    "upgrade_cost": 1500
+  },
+  "cat_bed": {
+    "name": "猫窝",
+    "size": [
+      1,
+      1
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor",
+      "outdoor"
+    ],
+    "price": 500,
+    "max_level": 3,
+    "upgrade_cost": 375
+  },
+  "cat_tree": {
+    "name": "猫爬架",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor"
+    ],
+    "price": 1500,
+    "max_level": 3,
+    "upgrade_cost": 1125
+  },
+  "bird_cage": {
+    "name": "鸟笼",
+    "size": [
+      1,
+      2
+    ],
+    "capacity": 2,
+    "location": [
+      "indoor",
+      "outdoor"
+    ],
+    "price": 800,
+    "max_level": 3,
+    "upgrade_cost": 600
+  },
+  "red_panda_den": {
+    "name": "小熊猫窝",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "outdoor"
+    ],
+    "price": 3000,
+    "max_level": 3,
+    "upgrade_cost": 2250
+  },
+  "fish_tank": {
+    "name": "鱼缸",
+    "size": [
+      2,
+      1
+    ],
+    "capacity": 3,
+    "location": [
+      "indoor"
+    ],
+    "price": 1200,
+    "max_level": 3,
+    "upgrade_cost": 900
+  },
+  "turtle_tank": {
+    "name": "龟缸",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 2,
+    "location": [
+      "indoor",
+      "outdoor"
+    ],
+    "price": 1000,
+    "max_level": 3,
+    "upgrade_cost": 750
+  },
+  "turtle_pond": {
+    "name": "龟池",
+    "size": [
+      4,
+      4
+    ],
+    "capacity": 4,
+    "location": [
+      "outdoor"
+    ],
+    "price": 4000,
+    "max_level": 3,
+    "upgrade_cost": 3000
+  },
+  "rabbit_hutch": {
+    "name": "兔笼",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor",
+      "outdoor"
+    ],
+    "price": 1500,
+    "max_level": 3,
+    "upgrade_cost": 1125
+  },
+  "hamster_cage": {
+    "name": "仓鼠笼",
+    "size": [
+      1,
+      1
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor"
+    ],
+    "price": 600,
+    "max_level": 3,
+    "upgrade_cost": 450
+  },
+  "guinea_pig_cage": {
+    "name": "豚鼠笼",
+    "size": [
+      2,
+      1
+    ],
+    "capacity": 2,
+    "location": [
+      "indoor",
+      "outdoor"
+    ],
+    "price": 1200,
+    "max_level": 3,
+    "upgrade_cost": 900
+  },
+  "hedgehog_den": {
+    "name": "刺猬窝",
+    "size": [
+      1,
+      1
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor"
+    ],
+    "price": 800,
+    "max_level": 3,
+    "upgrade_cost": 600
+  },
+  "squirrel_house": {
+    "name": "松鼠树屋",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "outdoor"
+    ],
+    "price": 2500,
+    "max_level": 3,
+    "upgrade_cost": 1875
+  },
+  "ferret_cage": {
+    "name": "雪貂笼",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor"
+    ],
+    "price": 2000,
+    "max_level": 3,
+    "upgrade_cost": 1500
+  },
+  "chinchilla_cage": {
+    "name": "龙猫笼",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor"
+    ],
+    "price": 2500,
+    "max_level": 3,
+    "upgrade_cost": 1875
+  },
+  "young_animal_pen": {
+    "name": "幼畜围栏",
+    "size": [
+      3,
+      3
+    ],
+    "capacity": 2,
+    "location": [
+      "outdoor"
+    ],
+    "price": 1500,
+    "max_level": 3,
+    "upgrade_cost": 1125
+  },
+  "duck_pond": {
+    "name": "鸭鹅水池",
+    "size": [
+      3,
+      3
+    ],
+    "capacity": 3,
+    "location": [
+      "outdoor"
+    ],
+    "price": 2000,
+    "max_level": 3,
+    "upgrade_cost": 1500
+  },
+  "reptile_tank": {
+    "name": "爬宠缸",
+    "size": [
+      2,
+      1
+    ],
+    "capacity": 2,
+    "location": [
+      "indoor"
+    ],
+    "price": 1500,
+    "max_level": 3,
+    "upgrade_cost": 1125
+  },
+  "amphibian_tank": {
+    "name": "水陆缸",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 2,
+    "location": [
+      "indoor"
+    ],
+    "price": 2000,
+    "max_level": 3,
+    "upgrade_cost": 1500
+  },
+  "insect_box": {
+    "name": "昆虫箱",
+    "size": [
+      1,
+      1
+    ],
+    "capacity": 1,
+    "location": [
+      "indoor"
+    ],
+    "price": 500,
+    "max_level": 3,
+    "upgrade_cost": 375
+  },
+  "butterfly_house": {
+    "name": "蝴蝶棚",
+    "size": [
+      3,
+      3
+    ],
+    "capacity": 3,
+    "location": [
+      "indoor"
+    ],
+    "price": 3500,
+    "max_level": 3,
+    "upgrade_cost": 2625
+  },
+  "crab_tank": {
+    "name": "蟹缸",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 3,
+    "location": [
+      "indoor"
+    ],
+    "price": 1200,
+    "max_level": 3,
+    "upgrade_cost": 900
+  },
+  "aviary": {
+    "name": "鸟舍",
+    "size": [
+      3,
+      3
+    ],
+    "capacity": 1,
+    "location": [
+      "outdoor"
+    ],
+    "price": 5000,
+    "max_level": 3,
+    "upgrade_cost": 3750
+  },
+  "fox_den": {
+    "name": "狐狸窝",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 1,
+    "location": [
+      "outdoor"
+    ],
+    "price": 2500,
+    "max_level": 3,
+    "upgrade_cost": 1875
+  },
+  "deer_pen": {
+    "name": "鹿栏",
+    "size": [
+      4,
+      4
+    ],
+    "capacity": 2,
+    "location": [
+      "outdoor"
+    ],
+    "price": 3000,
+    "max_level": 3,
+    "upgrade_cost": 2250
+  },
+  "otter_pool": {
+    "name": "水獭池",
+    "size": [
+      4,
+      4
+    ],
+    "capacity": 2,
+    "location": [
+      "outdoor"
+    ],
+    "price": 6000,
+    "max_level": 3,
+    "upgrade_cost": 4500
+  },
+  "penguin_pool": {
+    "name": "企鹅冰池",
+    "size": [
+      5,
+      5
+    ],
+    "capacity": 3,
+    "location": [
+      "outdoor"
+    ],
+    "price": 10000,
+    "max_level": 3,
+    "upgrade_cost": 7500
+  },
+  "seal_pool": {
+    "name": "海豹池",
+    "size": [
+      5,
+      5
+    ],
+    "capacity": 2,
+    "location": [
+      "outdoor"
+    ],
+    "price": 8000,
+    "max_level": 3,
+    "upgrade_cost": 6000
+  },
+  "dragon_den": {
+    "name": "龙窝",
+    "size": [
+      4,
+      4
+    ],
+    "capacity": 1,
+    "location": [
+      "outdoor"
+    ],
+    "price": 0,
+    "max_level": 3,
+    "upgrade_cost": 2000
+  },
+  "saltwater_tank": {
+    "name": "海水缸",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 3,
+    "location": [
+      "indoor"
+    ],
+    "price": 3000,
+    "max_level": 3,
+    "upgrade_cost": 2250
+  },
+  "jellyfish_tank": {
+    "name": "水母缸",
+    "size": [
+      2,
+      2
+    ],
+    "capacity": 2,
+    "location": [
+      "indoor"
+    ],
+    "price": 3500,
+    "max_level": 3,
+    "upgrade_cost": 2625
+  },
+  "planted_tank": {
+    "name": "水草缸",
+    "size": [
+      2,
+      1
+    ],
+    "capacity": 5,
+    "location": [
+      "indoor"
+    ],
+    "price": 1500,
+    "max_level": 3,
+    "upgrade_cost": 1125
+  }
+}

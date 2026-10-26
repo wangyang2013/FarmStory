@@ -1,0 +1,23 @@
+{
+  "slots": ["head", "face", "neck", "hand", "back"],
+  "slot_names": {
+    "head": "头部",
+    "face": "面部",
+    "neck": "颈部",
+    "hand": "手部",
+    "back": "背部"
+  },
+  "items": [
+    { "id": "straw_hat", "name": "草帽", "slot": "head", "price": 200, "rarity": "normal", "color": "#d8ae52", "description": "农夫的标准装备。" },
+    { "id": "beret", "name": "贝雷帽", "slot": "head", "price": 450, "rarity": "normal", "color": "#a97a8a", "description": "有点文艺。" },
+    { "id": "flower_crown", "name": "花环", "slot": "head", "price": 600, "rarity": "rare", "color": "#d29aa6", "description": "春天限定。" },
+    { "id": "round_glasses", "name": "圆框眼镜", "slot": "face", "price": 350, "rarity": "normal", "color": "#8c6a4a", "description": "看起来更有学问。" },
+    { "id": "sunglasses", "name": "墨镜", "slot": "face", "price": 500, "rarity": "normal", "color": "#5a5460", "description": "夏天用它遮太阳。" },
+    { "id": "scarf", "name": "围巾", "slot": "neck", "price": 300, "rarity": "normal", "color": "#b57f74", "description": "冬天保暖。" },
+    { "id": "pendant", "name": "吊坠", "slot": "neck", "price": 800, "rarity": "rare", "color": "#d8bd84", "description": "奶奶留下的。" },
+    { "id": "bracelet", "name": "手镯", "slot": "hand", "price": 400, "rarity": "normal", "color": "#c9a46a", "description": "干活时会叮当响。" },
+    { "id": "gardening_gloves", "name": "园艺手套", "slot": "hand", "price": 250, "rarity": "normal", "color": "#a8bd8a", "description": "不怕弄脏手。" },
+    { "id": "small_backpack", "name": "小背包", "slot": "back", "price": 900, "rarity": "normal", "color": "#8c6a4a", "description": "能多装点东西（纯装饰）。" },
+    { "id": "cape", "name": "披风", "slot": "back", "price": 1200, "rarity": "rare", "color": "#7a6a8a", "description": "走路时会飘。" }
+  ]
+}

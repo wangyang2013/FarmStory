@@ -1,0 +1,73 @@
+{
+  "crop": {
+    "base_chance": 0.05,
+    "fertilized_chance": 0.12,
+    "types": [
+      {
+        "id": "giant",
+        "weight": 1.0
+      },
+      {
+        "id": "heavy",
+        "weight": 1.0
+      },
+      {
+        "id": "giant_heavy",
+        "weight": 1.0
+      }
+    ]
+  },
+  "animal": {
+    "base_chance": 0.04,
+    "one_rare_parent_chance": 0.1,
+    "both_rare_parent_chance": 0.22,
+    "colors": [
+      {
+        "id": "golden",
+        "name": "金色",
+        "color": "#f0c14b"
+      },
+      {
+        "id": "silver",
+        "name": "银白",
+        "color": "#d8dde3"
+      },
+      {
+        "id": "ink",
+        "name": "墨黑",
+        "color": "#4a4450"
+      },
+      {
+        "id": "pastel",
+        "name": "粉彩",
+        "color": "#f3b6c8"
+      },
+      {
+        "id": "glaze",
+        "name": "琉璃",
+        "color": "#9fd8e0"
+      }
+    ]
+  },
+  "fish": {
+    "rare_color_chance": 0.05,
+    "giant_chance": 0.04,
+    "heavy_chance": 0.06,
+    "high_rod_bonus": 0.02,
+    "rain_or_dusk_bonus": 0.01
+  },
+  "bird": {
+    "base_chance": 0.05,
+    "high_net_bonus": 0.02
+  },
+  "insect": {
+    "base_chance": 0.06,
+    "high_net_bonus": 0.02,
+    "dusk_bonus": 0.01
+  },
+  "price_multipliers": {
+    "rare_color": 1.8,
+    "giant": 1.5,
+    "heavy": 1.2
+  }
+}

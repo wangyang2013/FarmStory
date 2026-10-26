@@ -1,0 +1,27 @@
+{
+  "start_money": 500,
+  "daily_salary": 150,
+  "crop_day_income_target": [
+    1,
+    6
+  ],
+  "animal_payback_days": [
+    15,
+    40
+  ],
+  "processing_max_multiplier": 5,
+  "rare_price_multiplier_cap": 3.0,
+  "play_time_tick_seconds": 1.0,
+  "quality_multiplier": {
+    "normal": 1.0,
+    "silver": 1.25,
+    "gold": 1.5,
+    "star": 2.0
+  },
+  "rare_multiplier": {
+    "heavy": 1.2,
+    "giant": 1.5,
+    "color": 1.8,
+    "giant_heavy": 1.8
+  }
+}

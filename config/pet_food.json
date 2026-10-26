@@ -1,0 +1,230 @@
+{
+  "dog_food": {
+    "name": "狗粮",
+    "price": 50,
+    "for": [
+      "dog"
+    ],
+    "friendship": 5
+  },
+  "cat_food": {
+    "name": "猫粮",
+    "price": 50,
+    "for": [
+      "cat"
+    ],
+    "friendship": 5
+  },
+  "bird_food": {
+    "name": "鸟食",
+    "price": 30,
+    "for": [
+      "bird",
+      "special"
+    ],
+    "friendship": 5
+  },
+  "bamboo": {
+    "name": "竹子",
+    "price": 80,
+    "for": [
+      "red_panda"
+    ],
+    "friendship": 5
+  },
+  "fruit": {
+    "name": "水果",
+    "price": 40,
+    "for": [
+      "red_panda",
+      "rabbit",
+      "guinea_pig"
+    ],
+    "friendship": 8
+  },
+  "fish_food": {
+    "name": "鱼食",
+    "price": 20,
+    "for": [
+      "fish"
+    ],
+    "friendship": 5
+  },
+  "turtle_food": {
+    "name": "龟粮",
+    "price": 30,
+    "for": [
+      "turtle",
+      "reptile"
+    ],
+    "friendship": 5
+  },
+  "vegetable": {
+    "name": "蔬菜",
+    "price": 20,
+    "for": [
+      "turtle",
+      "reptile",
+      "guinea_pig",
+      "rabbit"
+    ],
+    "friendship": 8
+  },
+  "rabbit_food": {
+    "name": "兔粮",
+    "price": 40,
+    "for": [
+      "rabbit"
+    ],
+    "friendship": 5
+  },
+  "hay": {
+    "name": "干草",
+    "price": 30,
+    "for": [
+      "rabbit",
+      "guinea_pig",
+      "young_livestock"
+    ],
+    "friendship": 5
+  },
+  "hamster_food": {
+    "name": "仓鼠粮",
+    "price": 30,
+    "for": [
+      "hamster"
+    ],
+    "friendship": 5
+  },
+  "nuts": {
+    "name": "坚果",
+    "price": 50,
+    "for": [
+      "squirrel",
+      "hamster"
+    ],
+    "friendship": 8
+  },
+  "meat_dry": {
+    "name": "肉干",
+    "price": 80,
+    "for": [
+      "ferret",
+      "special"
+    ],
+    "friendship": 8
+  },
+  "chinchilla_food": {
+    "name": "龙猫粮",
+    "price": 60,
+    "for": [
+      "chinchilla"
+    ],
+    "friendship": 5
+  },
+  "insect_food": {
+    "name": "昆虫饲料",
+    "price": 40,
+    "for": [
+      "hedgehog",
+      "reptile",
+      "special"
+    ],
+    "friendship": 5
+  },
+  "reptile_food": {
+    "name": "爬宠饲料",
+    "price": 50,
+    "for": [
+      "reptile"
+    ],
+    "friendship": 5
+  },
+  "duck_food": {
+    "name": "鸭食",
+    "price": 30,
+    "for": [
+      "young_livestock"
+    ],
+    "friendship": 5
+  },
+  "pig_food": {
+    "name": "猪食",
+    "price": 40,
+    "for": [
+      "young_livestock"
+    ],
+    "friendship": 5
+  },
+  "horse_food": {
+    "name": "马食",
+    "price": 60,
+    "for": [
+      "young_livestock"
+    ],
+    "friendship": 5
+  },
+  "jelly": {
+    "name": "果冻",
+    "price": 30,
+    "for": [
+      "insect"
+    ],
+    "friendship": 8
+  },
+  "nectar": {
+    "name": "花蜜",
+    "price": 40,
+    "for": [
+      "insect"
+    ],
+    "friendship": 8
+  },
+  "seaweed": {
+    "name": "海藻",
+    "price": 40,
+    "for": [
+      "aquatic_extended"
+    ],
+    "friendship": 5
+  },
+  "shrimp_food": {
+    "name": "虾粮",
+    "price": 20,
+    "for": [
+      "aquatic_extended"
+    ],
+    "friendship": 5
+  },
+  "crab_food": {
+    "name": "蟹粮",
+    "price": 30,
+    "for": [
+      "aquatic_extended"
+    ],
+    "friendship": 5
+  },
+  "fish_dry": {
+    "name": "鱼干",
+    "price": 50,
+    "for": [
+      "special",
+      "aquatic_extended"
+    ],
+    "friendship": 5
+  },
+  "gem": {
+    "name": "宝石",
+    "price": 0,
+    "for": [
+      "special"
+    ],
+    "friendship": 8
+  },
+  "pet_medicine": {
+    "name": "宠物药",
+    "price": 200,
+    "for": [],
+    "friendship": 0
+  }
+}

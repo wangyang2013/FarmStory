@@ -1,0 +1,252 @@
+{
+  "festivals": [
+    {
+      "id": "flower_festival",
+      "name": "花祭",
+      "season": "spring",
+      "day": 13,
+      "type": "flower",
+      "competition": true,
+      "description": "带上最好看的花参展，赢取种子与奖金。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "cooking_contest",
+      "name": "料理大赛",
+      "season": "spring",
+      "day": 28,
+      "type": "cooking",
+      "competition": true,
+      "description": "用你的拿手菜征服评委。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "sea_day",
+      "name": "海之日",
+      "season": "summer",
+      "day": 2,
+      "type": "simple",
+      "competition": false,
+      "description": "海边庆典与烟花，和村民一起放松。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "simple_reward": {
+        "coins": 100,
+        "friendship": 2
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "animal_fair",
+      "name": "斗牛节",
+      "season": "summer",
+      "day": 18,
+      "type": "animal",
+      "competition": true,
+      "description": "带上最得意的动物参加评比。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "harvest_festival",
+      "name": "丰收祭",
+      "season": "autumn",
+      "day": 15,
+      "type": "harvest",
+      "competition": true,
+      "description": "把今年最好的收获摆上展台。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "moon_viewing",
+      "name": "赏月会",
+      "season": "autumn",
+      "day": 25,
+      "type": "simple",
+      "competition": false,
+      "description": "在山坡上看月亮，聊聊天。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "simple_reward": {
+        "coins": 100,
+        "friendship": 2
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "winter_gift",
+      "name": "冬至",
+      "season": "winter",
+      "day": 12,
+      "type": "gift",
+      "competition": false,
+      "description": "交换礼物，温暖过冬。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "simple_reward": {
+        "coins": 200,
+        "friendship": 3
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    },
+    {
+      "id": "new_year",
+      "name": "新年",
+      "season": "winter",
+      "day": 30,
+      "type": "newyear",
+      "competition": false,
+      "description": "跨年钟声与红包，迎接新的一年。",
+      "rewards": {
+        "1": {
+          "coins": 1000,
+          "friendship": 10
+        },
+        "2": {
+          "coins": 500,
+          "friendship": 5
+        },
+        "3": {
+          "coins": 200,
+          "friendship": 3
+        },
+        "0": {
+          "coins": 50,
+          "friendship": 0
+        }
+      },
+      "simple_reward": {
+        "coins": 500,
+        "friendship": 3
+      },
+      "start_hour": 9,
+      "end_hour": 18
+    }
+  ]
+}

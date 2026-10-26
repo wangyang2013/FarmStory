@@ -1,0 +1,45 @@
+{
+  "daily_count": 3,
+  "expire_days": 3,
+  "manual_refresh_cost": 100,
+  "types": [
+    {
+      "id": "crop",
+      "pool": "crop",
+      "min": 3,
+      "max": 8,
+      "friendship": 2
+    },
+    {
+      "id": "fish",
+      "pool": "fish",
+      "min": 1,
+      "max": 3,
+      "friendship": 2
+    },
+    {
+      "id": "mineral",
+      "pool": "mineral",
+      "min": 2,
+      "max": 6,
+      "friendship": 2
+    }
+  ],
+  "difficulties": [
+    {
+      "id": "easy",
+      "chance": 0.5,
+      "multiplier": 1.0
+    },
+    {
+      "id": "normal",
+      "chance": 0.35,
+      "multiplier": 1.5
+    },
+    {
+      "id": "hard",
+      "chance": 0.15,
+      "multiplier": 2.5
+    }
+  ]
+}

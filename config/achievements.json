@@ -1,0 +1,72 @@
+[
+  {
+    "id": "first_harvest",
+    "name": "第一次收获",
+    "desc": "收获第一个作物",
+    "stat": "crops_harvested",
+    "threshold": 1
+  },
+  {
+    "id": "green_thumb",
+    "name": "绿手指",
+    "desc": "累计收获 100 个作物",
+    "stat": "crops_harvested",
+    "threshold": 100
+  },
+  {
+    "id": "angler",
+    "name": "钓鱼入门",
+    "desc": "累计钓到 10 条鱼",
+    "stat": "fish_caught",
+    "threshold": 10
+  },
+  {
+    "id": "miner",
+    "name": "矿工",
+    "desc": "累计敲出 50 个矿物",
+    "stat": "ore_mined",
+    "threshold": 50
+  },
+  {
+    "id": "curator",
+    "name": "收藏家",
+    "desc": "向博物馆捐赠 5 件展品",
+    "stat": "museum_donations",
+    "threshold": 5
+  },
+  {
+    "id": "social",
+    "name": "小镇熟人",
+    "desc": "参加 3 个节日",
+    "stat": "festivals_done",
+    "threshold": 3
+  },
+  {
+    "id": "helper",
+    "name": "热心肠",
+    "desc": "完成 10 个委托",
+    "stat": "quests_completed",
+    "threshold": 10
+  },
+  {
+    "id": "farm_life",
+    "name": "农场生活",
+    "desc": "在农场度过 30 天",
+    "stat": "days_played",
+    "threshold": 30
+  },
+  {
+    "id": "rancher",
+    "name": "牧场主",
+    "desc": "同时拥有 10 只动物",
+    "stat": "animals_owned",
+    "threshold": 10
+  },
+  {
+    "id": "saver",
+    "name": "小有积蓄",
+    "desc": "累计赚取 10,000 G",
+    "stat": "total_earned",
+    "threshold": 10000
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "crop": {
+    "unfertilized": { "normal": 0.70, "silver": 0.20, "gold": 0.09, "star": 0.01 },
+    "fertilized": { "normal": 0.40, "silver": 0.30, "gold": 0.25, "star": 0.05 }
+  },
+  "animal": {
+    "low_friendship": { "normal": 0.70, "silver": 0.20, "gold": 0.09, "star": 0.01 },
+    "high_friendship": { "normal": 0.50, "silver": 0.30, "gold": 0.17, "star": 0.03 }
+  },
+  "fish": {
+    "normal_rod": { "normal": 0.70, "silver": 0.20, "gold": 0.09, "star": 0.01 },
+    "high_rod": { "normal": 0.60, "silver": 0.25, "gold": 0.13, "star": 0.02 }
+  }
+}

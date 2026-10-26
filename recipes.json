@@ -1,0 +1,382 @@
+[
+  {
+    "id": "rice",
+    "name": "米饭",
+    "category": "主食",
+    "ingredients": { "rice": 1 },
+    "effects": { "stamina": 20, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "bread",
+    "name": "面包",
+    "category": "主食",
+    "ingredients": { "wheat": 2 },
+    "effects": { "stamina": 25, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "fried_rice",
+    "name": "炒饭",
+    "category": "主食",
+    "ingredients": { "rice": 1, "egg": 1, "onion": 1 },
+    "effects": { "stamina": 60, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "dumpling",
+    "name": "饺子",
+    "category": "主食",
+    "ingredients": { "wheat": 1, "pork": 1, "chinese_cabbage": 1 },
+    "effects": { "stamina": 50, "hearts": 0, "gift_bonus": 4 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "节日奖品"
+  },
+  {
+    "id": "ramen",
+    "name": "拉面",
+    "category": "主食",
+    "ingredients": { "wheat": 1, "egg": 1, "pork": 1 },
+    "effects": { "stamina": 70, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "pizza",
+    "name": "披萨",
+    "category": "主食",
+    "ingredients": { "wheat": 1, "tomato": 1, "cheese": 1 },
+    "effects": { "stamina": 80, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "电视购物"
+  },
+  {
+    "id": "corn_cake",
+    "name": "玉米饼",
+    "category": "主食",
+    "ingredients": { "corn": 1, "egg": 1, "milk": 1 },
+    "effects": { "stamina": 45, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "veggie_soup",
+    "name": "蔬菜汤",
+    "category": "汤类",
+    "ingredients": { "turnip": 1, "potato": 1, "cabbage": 1 },
+    "effects": { "stamina": 40, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "mushroom_soup",
+    "name": "蘑菇汤",
+    "category": "汤类",
+    "ingredients": { "farm_mushroom": 2, "milk": 1 },
+    "effects": { "stamina": 55, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "seafood_soup",
+    "name": "海鲜汤",
+    "category": "汤类",
+    "ingredients": { "fish_any": 1, "shrimp": 1, "kelp": 1 },
+    "effects": { "stamina": 0, "hearts": 30, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "cream_soup",
+    "name": "奶油浓汤",
+    "category": "汤类",
+    "ingredients": { "milk": 1, "potato": 1, "corn": 1 },
+    "effects": { "stamina": 50, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "pumpkin_soup",
+    "name": "南瓜汤",
+    "category": "汤类",
+    "ingredients": { "pumpkin": 1, "milk": 1 },
+    "effects": { "stamina": 45, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "节日奖品"
+  },
+  {
+    "id": "stew",
+    "name": "炖肉",
+    "category": "主菜",
+    "ingredients": { "beef": 1, "potato": 1, "carrot": 1 },
+    "effects": { "stamina": 90, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "grilled_fish",
+    "name": "烤鱼",
+    "category": "主菜",
+    "ingredients": { "fish_any": 1 },
+    "effects": { "stamina": 40, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "fried_egg",
+    "name": "煎蛋",
+    "category": "主菜",
+    "ingredients": { "egg": 1 },
+    "effects": { "stamina": 30, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "curry",
+    "name": "咖喱",
+    "category": "主菜",
+    "ingredients": { "chili": 1, "potato": 1, "onion": 1, "meat_any": 1 },
+    "effects": { "stamina": 75, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "节日奖品"
+  },
+  {
+    "id": "hamburger",
+    "name": "汉堡",
+    "category": "主菜",
+    "ingredients": { "wheat": 1, "beef": 1, "lettuce": 1, "tomato": 1 },
+    "effects": { "stamina": 85, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "电视购物"
+  },
+  {
+    "id": "sashimi",
+    "name": "生鱼片",
+    "category": "主菜",
+    "ingredients": { "high_grade_fish": 1 },
+    "effects": { "stamina": 35, "hearts": 0, "gift_bonus": 5 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "omelet",
+    "name": "蛋包饭",
+    "category": "主菜",
+    "ingredients": { "egg": 1, "rice": 1, "tomato": 1 },
+    "effects": { "stamina": 55, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "cake",
+    "name": "蛋糕",
+    "category": "甜点",
+    "ingredients": { "egg": 1, "wheat": 1, "milk": 1, "strawberry": 1 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 8 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "pudding",
+    "name": "布丁",
+    "category": "甜点",
+    "ingredients": { "egg": 1, "milk": 1, "sugar": 1 },
+    "effects": { "stamina": 30, "hearts": 0, "gift_bonus": 5 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "cookie",
+    "name": "曲奇",
+    "category": "甜点",
+    "ingredients": { "wheat": 1, "egg": 1, "sugar": 1 },
+    "effects": { "stamina": 25, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "apple_pie",
+    "name": "苹果派",
+    "category": "甜点",
+    "ingredients": { "wheat": 1, "apple": 1, "sugar": 1 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 7 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "节日奖品"
+  },
+  {
+    "id": "ice_cream",
+    "name": "冰淇淋",
+    "category": "甜点",
+    "ingredients": { "milk": 1, "egg": 1, "sugar": 1 },
+    "effects": { "stamina": 35, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "电视购物"
+  },
+  {
+    "id": "honey_cake",
+    "name": "蜂蜜蛋糕",
+    "category": "甜点",
+    "ingredients": { "wheat": 1, "egg": 1, "honey": 1 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 9 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "NPC好感回赠"
+  },
+  {
+    "id": "fruit_juice",
+    "name": "果汁",
+    "category": "饮料",
+    "ingredients": { "fruit_any": 2 },
+    "effects": { "stamina": 30, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "jam",
+    "name": "果酱",
+    "category": "饮料",
+    "ingredients": { "fruit_any": 2, "sugar": 1 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 4 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "honey_water",
+    "name": "蜂蜜水",
+    "category": "饮料",
+    "ingredients": { "honey": 1, "water": 1 },
+    "effects": { "stamina": 25, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "商店购买"
+  },
+  {
+    "id": "coffee",
+    "name": "咖啡",
+    "category": "饮料",
+    "ingredients": { "coffee_bean": 1 },
+    "effects": { "stamina": 15, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "电视购物"
+  },
+  {
+    "id": "tea",
+    "name": "茶",
+    "category": "饮料",
+    "ingredients": { "tea_leaf": 1 },
+    "effects": { "stamina": 20, "hearts": 0, "gift_bonus": 0 },
+    "machine": null,
+    "price_multiplier": 1.0,
+    "source": "电视购物"
+  },
+  {
+    "id": "cheese",
+    "name": "奶酪",
+    "category": "加工品",
+    "ingredients": { "milk": 2 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "奶酪机",
+    "price_multiplier": 3.0,
+    "source": "加工机器"
+  },
+  {
+    "id": "butter",
+    "name": "黄油",
+    "category": "加工品",
+    "ingredients": { "milk": 1 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "奶酪机",
+    "price_multiplier": 2.0,
+    "source": "加工机器"
+  },
+  {
+    "id": "cloth",
+    "name": "布料",
+    "category": "加工品",
+    "ingredients": { "wool": 2 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "纺织机",
+    "price_multiplier": 4.0,
+    "source": "加工机器"
+  },
+  {
+    "id": "pickled_veggies",
+    "name": "腌菜",
+    "category": "加工品",
+    "ingredients": { "veggie_any": 3 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "腌菜桶",
+    "price_multiplier": 2.5,
+    "source": "加工机器"
+  },
+  {
+    "id": "wine",
+    "name": "葡萄酒",
+    "category": "加工品",
+    "ingredients": { "grape": 3 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "酿酒桶",
+    "price_multiplier": 5.0,
+    "source": "加工机器"
+  },
+  {
+    "id": "beer",
+    "name": "啤酒",
+    "category": "加工品",
+    "ingredients": { "wheat": 3 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "酿酒桶",
+    "price_multiplier": 4.0,
+    "source": "加工机器"
+  },
+  {
+    "id": "sausage",
+    "name": "香肠",
+    "category": "加工品",
+    "ingredients": { "pork": 2 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "加工台",
+    "price_multiplier": 2.0,
+    "source": "加工机器"
+  },
+  {
+    "id": "honey_bottle",
+    "name": "瓶装蜂蜜",
+    "category": "加工品",
+    "ingredients": { "honey": 2 },
+    "effects": { "stamina": 0, "hearts": 0, "gift_bonus": 0 },
+    "machine": "加工台",
+    "price_multiplier": 1.8,
+    "source": "加工机器"
+  }
+]

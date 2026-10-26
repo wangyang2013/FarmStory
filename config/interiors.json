@@ -1,0 +1,370 @@
+{
+  "shop": {
+    "name": "杂货铺",
+    "width": 12,
+    "height": 8,
+    "floor": "wood",
+    "wall": "#e8d9bb",
+    "wall_dark": "#d9c9a8",
+    "props": [
+      {
+        "kind": "shelf",
+        "x": 2,
+        "y": 3.2,
+        "w": 3,
+        "label": "种子货架"
+      },
+      {
+        "kind": "shelf",
+        "x": 9,
+        "y": 3.2,
+        "w": 3,
+        "label": "杂货货架"
+      },
+      {
+        "kind": "counter",
+        "x": 6,
+        "y": 4.2,
+        "w": 4,
+        "interact": "shop",
+        "text": "按 E 与店主交谈（商店）"
+      },
+      {
+        "kind": "crate",
+        "x": 10.4,
+        "y": 5.4
+      },
+      {
+        "kind": "plant",
+        "x": 1.4,
+        "y": 5.6
+      },
+      {
+        "kind": "crate",
+        "x": 1.6,
+        "y": 6.4
+      },
+      {
+        "kind": "crate",
+        "x": 2.8,
+        "y": 6.6
+      },
+      {
+        "kind": "bucket",
+        "x": 10.6,
+        "y": 6.3
+      },
+      {
+        "kind": "plant",
+        "x": 10.8,
+        "y": 4.6
+      }
+    ]
+  },
+  "clinic": {
+    "name": "诊所",
+    "width": 10,
+    "height": 7,
+    "floor": "tile",
+    "wall": "#f2ecdd",
+    "wall_dark": "#d8cfbb",
+    "props": [
+      {
+        "kind": "desk",
+        "x": 5,
+        "y": 3.4,
+        "w": 3,
+        "interact": "clinic",
+        "text": "按 E 挂号治疗"
+      },
+      {
+        "kind": "clinic_bed",
+        "x": 1.8,
+        "y": 4.6
+      },
+      {
+        "kind": "clinic_bed",
+        "x": 8.2,
+        "y": 4.6
+      },
+      {
+        "kind": "cabinet",
+        "x": 1.4,
+        "y": 3.2
+      },
+      {
+        "kind": "plant",
+        "x": 8.6,
+        "y": 3.0
+      },
+      {
+        "kind": "plant",
+        "x": 1.4,
+        "y": 5.8
+      },
+      {
+        "kind": "cabinet",
+        "x": 8.8,
+        "y": 5.6
+      }
+    ]
+  },
+  "library": {
+    "name": "图书馆",
+    "width": 11,
+    "height": 7,
+    "floor": "wood",
+    "wall": "#d8ad6a",
+    "wall_dark": "#bc8f51",
+    "props": [
+      {
+        "kind": "bookshelf",
+        "x": 2,
+        "y": 3.2,
+        "w": 2,
+        "interact": "library",
+        "text": "按 E 翻阅书籍"
+      },
+      {
+        "kind": "bookshelf",
+        "x": 4.6,
+        "y": 3.2,
+        "w": 2,
+        "interact": "library",
+        "text": "按 E 翻阅书籍"
+      },
+      {
+        "kind": "bookshelf",
+        "x": 7.2,
+        "y": 3.2,
+        "w": 2,
+        "interact": "library",
+        "text": "按 E 翻阅书籍"
+      },
+      {
+        "kind": "desk",
+        "x": 8.6,
+        "y": 4.8,
+        "w": 2
+      },
+      {
+        "kind": "plant",
+        "x": 1.2,
+        "y": 5.0
+      },
+      {
+        "kind": "desk",
+        "x": 5.4,
+        "y": 5.2,
+        "w": 2
+      },
+      {
+        "kind": "crate",
+        "x": 1.4,
+        "y": 6.0
+      }
+    ]
+  },
+  "museum": {
+    "name": "博物馆",
+    "width": 12,
+    "height": 8,
+    "floor": "stone",
+    "wall": "#d9ccb4",
+    "wall_dark": "#bcae95",
+    "props": [
+      {
+        "kind": "pedestal",
+        "x": 2.4,
+        "y": 4.0,
+        "interact": "museum",
+        "text": "按 E 参观展品"
+      },
+      {
+        "kind": "pedestal",
+        "x": 6.0,
+        "y": 4.0,
+        "interact": "museum",
+        "text": "按 E 参观展品"
+      },
+      {
+        "kind": "pedestal",
+        "x": 9.6,
+        "y": 4.0,
+        "interact": "museum",
+        "text": "按 E 参观展品"
+      },
+      {
+        "kind": "display_case",
+        "x": 2.4,
+        "y": 6.0,
+        "w": 3
+      },
+      {
+        "kind": "display_case",
+        "x": 8.0,
+        "y": 6.0,
+        "w": 3
+      },
+      {
+        "kind": "plant",
+        "x": 1.0,
+        "y": 3.0
+      },
+      {
+        "kind": "plant",
+        "x": 10.8,
+        "y": 3.0
+      },
+      {
+        "kind": "pedestal",
+        "x": 6.0,
+        "y": 6.4,
+        "interact": "museum",
+        "text": "按 E 参观展品"
+      }
+    ]
+  },
+  "coop": {
+    "name": "鸡舍",
+    "width": 10,
+    "height": 7,
+    "floor": "straw",
+    "wall": "#c9a273",
+    "wall_dark": "#ad9576",
+    "props": [
+      {
+        "kind": "nest_box",
+        "x": 2.6,
+        "y": 3.4,
+        "w": 3
+      },
+      {
+        "kind": "feed_trough",
+        "x": 7.0,
+        "y": 3.6,
+        "w": 2,
+        "interact": "feed_coop",
+        "text": "按 E 喂食鸡群"
+      },
+      {
+        "kind": "incubator",
+        "x": 9.0,
+        "y": 3.4
+      },
+      {
+        "kind": "straw_pile",
+        "x": 2.0,
+        "y": 5.6
+      },
+      {
+        "kind": "straw_pile",
+        "x": 5.0,
+        "y": 5.8
+      },
+      {
+        "kind": "bucket",
+        "x": 8.8,
+        "y": 5.6
+      },
+      {
+        "kind": "crate",
+        "x": 4.4,
+        "y": 5.9
+      }
+    ]
+  },
+  "barn": {
+    "name": "畜棚",
+    "width": 12,
+    "height": 8,
+    "floor": "straw",
+    "wall": "#a8615c",
+    "wall_dark": "#8a4e4a",
+    "props": [
+      {
+        "kind": "feed_trough",
+        "x": 3.0,
+        "y": 3.6,
+        "w": 3,
+        "interact": "feed_barn",
+        "text": "按 E 喂食牲畜"
+      },
+      {
+        "kind": "milking_station",
+        "x": 8.4,
+        "y": 3.6,
+        "w": 2
+      },
+      {
+        "kind": "hay_pile",
+        "x": 5.0,
+        "y": 5.8,
+        "w": 3
+      },
+      {
+        "kind": "tool_rack",
+        "x": 10.4,
+        "y": 3.4
+      },
+      {
+        "kind": "straw_pile",
+        "x": 1.6,
+        "y": 5.6
+      },
+      {
+        "kind": "crate",
+        "x": 10.6,
+        "y": 6.2
+      },
+      {
+        "kind": "bucket",
+        "x": 6.6,
+        "y": 6.4
+      }
+    ]
+  },
+  "worker_hut": {
+    "name": "雇工小屋",
+    "width": 8,
+    "height": 6,
+    "floor": "wood",
+    "wall": "#b58b5c",
+    "wall_dark": "#9c7449",
+    "props": [
+      {
+        "kind": "desk",
+        "x": 4,
+        "y": 3.4,
+        "w": 2,
+        "interact": "worker",
+        "text": "按 E 雇佣 / 解雇浇水工"
+      },
+      {
+        "kind": "bed",
+        "x": 6.4,
+        "y": 3.4
+      },
+      {
+        "kind": "bucket",
+        "x": 1.6,
+        "y": 4.4
+      },
+      {
+        "kind": "tool_rack",
+        "x": 1.4,
+        "y": 2.9
+      },
+      {
+        "kind": "crate",
+        "x": 1.6,
+        "y": 5.0
+      },
+      {
+        "kind": "plant",
+        "x": 6.6,
+        "y": 4.8
+      }
+    ]
+  }
+}

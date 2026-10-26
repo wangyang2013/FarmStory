@@ -1,0 +1,66 @@
+[
+  {
+    "id": "furn_plant",
+    "name": "盆栽",
+    "desc": "一盆四季常青的绿植。",
+    "price": 300,
+    "size": [1, 1],
+    "icon": "plant"
+  },
+  {
+    "id": "furn_rug",
+    "name": "流苏地毯",
+    "desc": "手工编织的暖色地毯。",
+    "price": 500,
+    "size": [2, 2],
+    "icon": "rug"
+  },
+  {
+    "id": "furn_table",
+    "name": "木桌",
+    "desc": "结实的橡木餐桌。",
+    "price": 700,
+    "size": [2, 1],
+    "icon": "table"
+  },
+  {
+    "id": "furn_chair",
+    "name": "木椅",
+    "desc": "坐起来很舒服。",
+    "price": 250,
+    "size": [1, 1],
+    "icon": "chair"
+  },
+  {
+    "id": "furn_fishtank",
+    "name": "鱼缸",
+    "desc": "能看到小鱼游动的水族箱。",
+    "price": 1500,
+    "size": [2, 1],
+    "icon": "fishtank"
+  },
+  {
+    "id": "furn_gramophone",
+    "name": "留声机",
+    "desc": "会播放轻柔的旋律。",
+    "price": 2000,
+    "size": [1, 1],
+    "icon": "gramophone"
+  },
+  {
+    "id": "furn_calendar",
+    "name": "挂历",
+    "desc": "每天看看日期与节日。",
+    "price": 400,
+    "size": [1, 1],
+    "icon": "calendar"
+  },
+  {
+    "id": "furn_bookshelf",
+    "name": "书架",
+    "desc": "整齐摆放着小镇的旧书。",
+    "price": 900,
+    "size": [2, 1],
+    "icon": "bookshelf"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "toy_ball": { "name": "玩具球", "price": 100, "tags": ["house", "pen"] },
+  "swing": { "name": "秋千", "price": 150, "tags": ["cage", "aviary"] },
+  "mirror": { "name": "小镜子", "price": 120, "tags": ["cage", "aviary"] },
+  "water_plant": { "name": "水草", "price": 80, "tags": ["tank"] },
+  "sun_lamp": { "name": "晒背灯", "price": 200, "tags": ["tank", "pond"] },
+  "chew_wood": { "name": "咬木", "price": 60, "tags": ["hutch", "pen"] },
+  "grass_nest": { "name": "干草窝", "price": 90, "tags": ["den", "pen", "hutch"] }
+}

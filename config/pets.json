@@ -1,0 +1,2091 @@
+{
+  "friendship_max": 100,
+  "friendship_start": 20,
+  "max_pets": 12,
+  "status": {
+    "start": {
+      "hunger": 70,
+      "mood": 70,
+      "cleanliness": 80,
+      "health": 100
+    },
+    "decay": {
+      "hunger": 20,
+      "mood": 10,
+      "cleanliness": 15
+    },
+    "feed": {
+      "hunger": 30,
+      "mood": 5
+    },
+    "play_mood": 20,
+    "pet_mood": 10,
+    "clean_amount": 40,
+    "hunger_health_loss": 10,
+    "dirty_health_loss": 5,
+    "runaway": {
+      "friendship": 10,
+      "hunger": 20,
+      "days": 3,
+      "chance": 0.5,
+      "missing_days": 3,
+      "recover_friendship": 30
+    }
+  },
+  "interactions": {
+    "feed_friendship": 5,
+    "pet_friendship": 3,
+    "play_friendship": 2,
+    "clean_friendship": 2
+  },
+  "rare_colors": [
+    {
+      "id": "golden",
+      "name": "金色",
+      "color": "#e2c48c"
+    },
+    {
+      "id": "silver",
+      "name": "银白",
+      "color": "#d8d8d8"
+    },
+    {
+      "id": "black",
+      "name": "墨黑",
+      "color": "#6f665e"
+    },
+    {
+      "id": "pastel",
+      "name": "粉彩",
+      "color": "#f2c9d8"
+    },
+    {
+      "id": "glazed",
+      "name": "琉璃",
+      "color": "#a8d8d0"
+    }
+  ],
+  "types": [
+    {
+      "id": "dog",
+      "name": "狗",
+      "category": "companion",
+      "house_types": [
+        "dog_house"
+      ],
+      "food_id": "dog_food",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "follow_range": 2,
+      "special_behavior": "pickup_items",
+      "rare_chance": 0.1,
+      "breeds": [
+        {
+          "id": "shiba",
+          "name": "柴犬",
+          "price": 3000,
+          "description": "活泼，捡东西频率高",
+          "color": "#c9975b",
+          "accent": "#f0e3cc",
+          "ears": "pointy",
+          "tail": "curly",
+          "build": "normal"
+        },
+        {
+          "id": "golden_retriever",
+          "name": "金毛",
+          "price": 4000,
+          "description": "温顺，好感提升快",
+          "color": "#d8b46a",
+          "accent": "#f2dfae",
+          "ears": "floppy",
+          "tail": "long",
+          "build": "long"
+        },
+        {
+          "id": "corgi",
+          "name": "柯基",
+          "price": 3500,
+          "description": "短腿、大耳，跑得快",
+          "color": "#d9a05e",
+          "accent": "#f5ead6",
+          "ears": "pointy",
+          "tail": "short",
+          "build": "short"
+        },
+        {
+          "id": "husky",
+          "name": "哈士奇",
+          "price": 4500,
+          "description": "偶尔调皮，跑得远",
+          "color": "#8a8f96",
+          "accent": "#f0f2f4",
+          "ears": "pointy",
+          "tail": "long",
+          "build": "long",
+          "mask": true
+        },
+        {
+          "id": "tianyuan_dog",
+          "name": "中华田园犬",
+          "price": 2000,
+          "description": "忠诚，捡东西稳定",
+          "color": "#b08a62",
+          "accent": "#e6d3b6",
+          "ears": "pointy",
+          "tail": "long",
+          "build": "normal"
+        },
+        {
+          "id": "poodle",
+          "name": "贵宾犬",
+          "price": 5500,
+          "description": "聪明，学动作快",
+          "color": "#d8c3a5",
+          "accent": "#f0e3cc",
+          "ears": "floppy",
+          "build": "normal"
+        },
+        {
+          "id": "samoyed",
+          "name": "萨摩耶",
+          "price": 6000,
+          "description": "友善，好感提升快",
+          "color": "#f2ece0",
+          "accent": "#ffffff",
+          "ears": "pointy",
+          "build": "long"
+        },
+        {
+          "id": "border_collie",
+          "name": "边牧",
+          "price": 6000,
+          "description": "最聪明，捡东西范围大",
+          "color": "#4f4a44",
+          "accent": "#f2ece0",
+          "ears": "pointy",
+          "build": "long"
+        }
+      ],
+      "gift_friendship_min": 60,
+      "gift_chance": 0.55,
+      "gifts": [
+        {
+          "item_id": "wild_berry",
+          "category": "forage",
+          "name": "野果",
+          "price": 25
+        },
+        {
+          "item_id": "branch",
+          "category": "forage",
+          "name": "树枝",
+          "price": 5
+        },
+        {
+          "item_id": "stone",
+          "category": "forage",
+          "name": "石头",
+          "price": 2
+        }
+      ]
+    },
+    {
+      "id": "cat",
+      "name": "猫",
+      "category": "companion",
+      "house_types": [
+        "cat_bed",
+        "cat_tree"
+      ],
+      "food_id": "cat_food",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "follow_range": 2,
+      "special_behavior": "gift_fish",
+      "rare_chance": 0.1,
+      "breeds": [
+        {
+          "id": "orange_cat",
+          "name": "橘猫",
+          "price": 2500,
+          "description": "贪吃，送鱼频率高",
+          "color": "#d9a05e",
+          "accent": "#f0d8b0",
+          "ears": "pointy",
+          "tail": "up",
+          "build": "round",
+          "stripes": true
+        },
+        {
+          "id": "white_cat",
+          "name": "白猫",
+          "price": 3000,
+          "description": "安静，喜欢床边睡觉",
+          "color": "#efe9dc",
+          "accent": "#faf6ee",
+          "ears": "pointy",
+          "tail": "up",
+          "build": "slim"
+        },
+        {
+          "id": "black_cat",
+          "name": "黑猫",
+          "price": 3000,
+          "description": "夜行，晚上更活跃",
+          "color": "#5f5a54",
+          "accent": "#8a847c",
+          "ears": "pointy",
+          "tail": "up",
+          "build": "slim"
+        },
+        {
+          "id": "calico",
+          "name": "三花猫",
+          "price": 2800,
+          "description": "温顺，好感稳定",
+          "color": "#efe6d4",
+          "accent": "#c98a5a",
+          "ears": "pointy",
+          "tail": "up",
+          "build": "round",
+          "patches": true
+        },
+        {
+          "id": "ragdoll",
+          "name": "布偶猫",
+          "price": 6000,
+          "description": "粘人，跟随距离短",
+          "color": "#e6dccb",
+          "accent": "#9a8a7a",
+          "ears": "floppy",
+          "tail": "long",
+          "build": "long"
+        },
+        {
+          "id": "siamese",
+          "name": "暹罗猫",
+          "price": 4200,
+          "description": "爱叫，话多",
+          "color": "#e8dcc8",
+          "accent": "#6f5a48",
+          "ears": "pointy",
+          "build": "slim",
+          "mask": true
+        },
+        {
+          "id": "british_shorthair",
+          "name": "英短",
+          "price": 3800,
+          "description": "安静，喜欢趴着",
+          "color": "#8a95a8",
+          "accent": "#c9d0d8",
+          "ears": "pointy",
+          "build": "round"
+        },
+        {
+          "id": "maine_coon",
+          "name": "缅因猫",
+          "price": 6000,
+          "description": "温和，像小狮子",
+          "color": "#9a7a5a",
+          "accent": "#e6d3b6",
+          "ears": "pointy",
+          "build": "long",
+          "fluffy": true
+        }
+      ],
+      "gift_friendship_min": 80,
+      "gift_chance": 0.55,
+      "gifts": [
+        {
+          "item_id": "whitebait",
+          "category": "fish",
+          "name": "白条鱼",
+          "price": 8
+        },
+        {
+          "item_id": "medaka",
+          "category": "fish",
+          "name": "青鱂",
+          "price": 10
+        },
+        {
+          "item_id": "river_shrimp",
+          "category": "fish",
+          "name": "河虾",
+          "price": 10
+        }
+      ]
+    },
+    {
+      "id": "bird",
+      "name": "鸟",
+      "category": "cage",
+      "house_types": [
+        "bird_cage"
+      ],
+      "food_id": "bird_food",
+      "can_pet": true,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "sing",
+      "rare_chance": 0.08,
+      "breeds": [
+        {
+          "id": "budgie",
+          "name": "虎皮鹦鹉",
+          "price": 1500,
+          "description": "爱叫，早上唱歌",
+          "color": "#8fae75",
+          "accent": "#e8c95a",
+          "ears": "none",
+          "tail": "long",
+          "build": "small"
+        },
+        {
+          "id": "cockatiel",
+          "name": "玄凤鹦鹉",
+          "price": 2500,
+          "description": "会吹口哨，好感高会模仿",
+          "color": "#b9b2a8",
+          "accent": "#e8a05e",
+          "ears": "none",
+          "tail": "long",
+          "build": "normal"
+        },
+        {
+          "id": "canary",
+          "name": "金丝雀",
+          "price": 2000,
+          "description": "唱歌频繁，心情好时全天唱",
+          "color": "#e8c95a",
+          "accent": "#f5e08a",
+          "ears": "none",
+          "tail": "short",
+          "build": "small"
+        },
+        {
+          "id": "finch",
+          "name": "文鸟",
+          "price": 1200,
+          "description": "安静，成对更好",
+          "color": "#e8e2d6",
+          "accent": "#c95f4f",
+          "ears": "none",
+          "tail": "short",
+          "build": "small"
+        },
+        {
+          "id": "lovebird",
+          "name": "牡丹鹦鹉",
+          "price": 3500,
+          "description": "粘人，可放出停在肩上",
+          "color": "#7fa86a",
+          "accent": "#e8a05e",
+          "ears": "none",
+          "tail": "short",
+          "build": "normal"
+        },
+        {
+          "id": "parrot",
+          "name": "小太阳鹦鹉",
+          "price": 4500,
+          "description": "聪明，会学词",
+          "color": "#6f9a60",
+          "accent": "#e8a05e",
+          "tail": "long"
+        },
+        {
+          "id": "owl_finch",
+          "name": "白腰文鸟",
+          "price": 1400,
+          "description": "群居，活泼",
+          "color": "#cfcabf",
+          "accent": "#5f5a54",
+          "tail": "short"
+        }
+      ]
+    },
+    {
+      "id": "red_panda",
+      "name": "小熊猫",
+      "category": "companion",
+      "house_types": [
+        "red_panda_den"
+      ],
+      "food_id": "bamboo",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "follow_range": 2,
+      "special_behavior": "shake_tree",
+      "rare_chance": 0.05,
+      "breeds": [
+        {
+          "id": "red_panda",
+          "name": "小熊猫",
+          "price": 15000,
+          "description": "卖萌，喜欢爬树",
+          "color": "#c47b4a",
+          "accent": "#f0e3cc",
+          "ears": "round",
+          "tail": "ringed",
+          "build": "fluffy"
+        }
+      ]
+    },
+    {
+      "id": "fish",
+      "name": "鱼",
+      "category": "aquatic",
+      "house_types": [
+        "fish_tank"
+      ],
+      "food_id": "fish_food",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "special_behavior": "swim",
+      "rare_chance": 0.05,
+      "breeds": [
+        {
+          "id": "goldfish",
+          "name": "金鱼",
+          "price": 500,
+          "description": "好养，适合新手",
+          "color": "#e08a4e",
+          "accent": "#f2b06a",
+          "ears": "none",
+          "tail": "fan",
+          "build": "round"
+        },
+        {
+          "id": "koi",
+          "name": "锦鲤",
+          "price": 3000,
+          "description": "高贵，鱼缸要大",
+          "color": "#efe9dc",
+          "accent": "#c4553f",
+          "ears": "none",
+          "tail": "fan",
+          "build": "long"
+        },
+        {
+          "id": "betta",
+          "name": "斗鱼",
+          "price": 800,
+          "description": "不能混养，单独缸",
+          "color": "#6f7fc9",
+          "accent": "#a88ad8",
+          "ears": "none",
+          "tail": "fan",
+          "build": "small"
+        },
+        {
+          "id": "guppy",
+          "name": "孔雀鱼",
+          "price": 300,
+          "description": "可群养，繁殖快",
+          "color": "#c47b9c",
+          "accent": "#7fc9b0",
+          "ears": "none",
+          "tail": "fan",
+          "build": "small"
+        },
+        {
+          "id": "angelfish",
+          "name": "神仙鱼",
+          "price": 2500,
+          "description": "优雅，需要水草",
+          "color": "#c9d6dc",
+          "accent": "#8fa8b0",
+          "ears": "none",
+          "tail": "fan",
+          "build": "long"
+        },
+        {
+          "id": "neon_tetra",
+          "name": "霓虹灯鱼",
+          "price": 600,
+          "description": "群游，好看",
+          "color": "#5f97b0",
+          "accent": "#c4553f",
+          "build": "small"
+        },
+        {
+          "id": "discus",
+          "name": "七彩神仙",
+          "price": 5000,
+          "description": "难养，需要稳定水质",
+          "color": "#c47b4a",
+          "accent": "#5f97b0",
+          "build": "round"
+        },
+        {
+          "id": "ranchu",
+          "name": "兰寿金鱼",
+          "price": 4000,
+          "description": "憨态可掬",
+          "color": "#e08a4e",
+          "accent": "#f2e9d6",
+          "build": "round"
+        }
+      ]
+    },
+    {
+      "id": "turtle",
+      "name": "乌龟",
+      "category": "reptile",
+      "house_types": [
+        "turtle_tank",
+        "turtle_pond"
+      ],
+      "food_id": "turtle_food",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 60,
+      "special_behavior": "bask",
+      "rare_chance": 0.08,
+      "breeds": [
+        {
+          "id": "tortoise",
+          "name": "陆龟",
+          "price": 8000,
+          "description": "慢，喜欢晒太阳",
+          "color": "#6f7a52",
+          "accent": "#c9b48e",
+          "ears": "none",
+          "tail": "short",
+          "build": "round"
+        },
+        {
+          "id": "water_turtle",
+          "name": "水龟",
+          "price": 3000,
+          "description": "半水半陆，需要龟缸",
+          "color": "#7f8a62",
+          "accent": "#b9c49a",
+          "ears": "none",
+          "tail": "short",
+          "build": "flat"
+        },
+        {
+          "id": "grass_turtle",
+          "name": "草龟",
+          "price": 1500,
+          "description": "好养，适应性强",
+          "color": "#5f7a52",
+          "accent": "#a8b88a",
+          "ears": "none",
+          "tail": "short",
+          "build": "flat"
+        },
+        {
+          "id": "red_eared_slider",
+          "name": "巴西龟",
+          "price": 2000,
+          "description": "活泼，游泳快",
+          "color": "#6f8a5a",
+          "accent": "#c4553f",
+          "ears": "none",
+          "tail": "short",
+          "build": "flat"
+        },
+        {
+          "id": "box_turtle",
+          "name": "箱龟",
+          "price": 5000,
+          "description": "可爱，陆栖为主",
+          "color": "#8a6a4a",
+          "accent": "#d8c08a"
+        }
+      ]
+    },
+    {
+      "id": "rabbit",
+      "name": "兔子",
+      "category": "companion",
+      "house_types": [
+        "rabbit_hutch"
+      ],
+      "food_id": "rabbit_food",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "follow",
+      "rare_chance": 0.08,
+      "art": "rabbit",
+      "breeds": [
+        {
+          "id": "holland_lop",
+          "name": "垂耳兔",
+          "price": 1500,
+          "description": "温顺，好养",
+          "color": "#d8c3a5",
+          "accent": "#f0e3cc",
+          "ears": "floppy"
+        },
+        {
+          "id": "netherland_dwarf",
+          "name": "侏儒兔",
+          "price": 1800,
+          "description": "最小，活泼",
+          "color": "#b0a090",
+          "accent": "#e6d3b6",
+          "build": "small"
+        },
+        {
+          "id": "angora",
+          "name": "安哥拉兔",
+          "price": 3000,
+          "description": "毛发需要梳理",
+          "color": "#f0e9dc",
+          "accent": "#ffffff",
+          "build": "fluffy"
+        },
+        {
+          "id": "lionhead",
+          "name": "狮子头兔",
+          "price": 2500,
+          "description": "像小狮子",
+          "color": "#c9a06a",
+          "accent": "#f0e3cc",
+          "build": "fluffy"
+        },
+        {
+          "id": "rex",
+          "name": "力克斯兔",
+          "price": 2000,
+          "description": "毛质柔软",
+          "color": "#8a7a6a",
+          "accent": "#c9b48e"
+        }
+      ]
+    },
+    {
+      "id": "hamster",
+      "name": "仓鼠",
+      "category": "cage",
+      "house_types": [
+        "hamster_cage"
+      ],
+      "food_id": "hamster_food",
+      "can_pet": true,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.08,
+      "art": "rodent",
+      "breeds": [
+        {
+          "id": "golden_hamster",
+          "name": "金丝熊",
+          "price": 600,
+          "description": "温顺，夜行",
+          "color": "#d8b46a",
+          "accent": "#f2dfae",
+          "build": "round"
+        },
+        {
+          "id": "pudding_hamster",
+          "name": "布丁仓鼠",
+          "price": 500,
+          "description": "胆小，好养",
+          "color": "#e8d1a0",
+          "accent": "#f5e8c8",
+          "build": "small"
+        },
+        {
+          "id": "roborovski",
+          "name": "三线仓鼠",
+          "price": 400,
+          "description": "跑得快，群居",
+          "color": "#cfcabf",
+          "accent": "#e8e2d6",
+          "build": "small"
+        },
+        {
+          "id": "winter_white",
+          "name": "冬白仓鼠",
+          "price": 700,
+          "description": "毛色随季节变化",
+          "color": "#d8d8d0",
+          "accent": "#f2f2ec",
+          "build": "small"
+        }
+      ]
+    },
+    {
+      "id": "guinea_pig",
+      "name": "豚鼠",
+      "category": "companion",
+      "house_types": [
+        "guinea_pig_cage"
+      ],
+      "food_id": "hay",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "can_release": false,
+      "release_friendship": 50,
+      "special_behavior": "follow",
+      "rare_chance": 0.08,
+      "art": "rodent",
+      "breeds": [
+        {
+          "id": "american_guinea",
+          "name": "短毛豚鼠",
+          "price": 1000,
+          "description": "好养，会叫",
+          "color": "#c9a06a",
+          "accent": "#f0e3cc"
+        },
+        {
+          "id": "peruvian_guinea",
+          "name": "长毛豚鼠",
+          "price": 1600,
+          "description": "毛发需要梳理",
+          "color": "#e6d3b6",
+          "accent": "#f7f0dd",
+          "build": "fluffy"
+        },
+        {
+          "id": "abyssinian_guinea",
+          "name": "卷毛豚鼠",
+          "price": 1500,
+          "description": "可爱，活泼",
+          "color": "#b08a62",
+          "accent": "#e6d3b6",
+          "build": "fluffy"
+        },
+        {
+          "id": "skinny_guinea",
+          "name": "无毛豚鼠",
+          "price": 2000,
+          "description": "稀有，需要保暖",
+          "color": "#d9b8a0",
+          "accent": "#f0d8c8",
+          "build": "small"
+        }
+      ]
+    },
+    {
+      "id": "hedgehog",
+      "name": "刺猬",
+      "category": "cage",
+      "house_types": [
+        "hedgehog_den"
+      ],
+      "food_id": "insect_food",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.08,
+      "art": "hedgehog",
+      "breeds": [
+        {
+          "id": "common_hedgehog",
+          "name": "普通刺猬",
+          "price": 1200,
+          "description": "夜行，缩成球",
+          "color": "#8a7a62",
+          "accent": "#e6d3b6"
+        },
+        {
+          "id": "albino_hedgehog",
+          "name": "白化刺猬",
+          "price": 2500,
+          "description": "稀有，温顺",
+          "color": "#efe9dc",
+          "accent": "#f2c9d8"
+        },
+        {
+          "id": "african_pygmy",
+          "name": "非洲迷你刺猬",
+          "price": 1800,
+          "description": "好养，活泼",
+          "color": "#b0a090",
+          "accent": "#e6d3b6",
+          "build": "small"
+        }
+      ]
+    },
+    {
+      "id": "squirrel",
+      "name": "松鼠",
+      "category": "cage",
+      "house_types": [
+        "squirrel_house"
+      ],
+      "food_id": "nuts",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.08,
+      "art": "squirrel",
+      "breeds": [
+        {
+          "id": "red_squirrel",
+          "name": "红松鼠",
+          "price": 1500,
+          "description": "活泼，会藏食物",
+          "color": "#c47b4a",
+          "accent": "#f0e3cc"
+        },
+        {
+          "id": "gray_squirrel",
+          "name": "灰松鼠",
+          "price": 1200,
+          "description": "常见，好养",
+          "color": "#9a948c",
+          "accent": "#e6d3b6"
+        },
+        {
+          "id": "flying_squirrel",
+          "name": "飞鼠",
+          "price": 2500,
+          "description": "夜行，可滑翔",
+          "color": "#8a7a6a",
+          "accent": "#e6d3b6"
+        }
+      ]
+    },
+    {
+      "id": "ferret",
+      "name": "雪貂",
+      "category": "companion",
+      "house_types": [
+        "ferret_cage"
+      ],
+      "food_id": "meat_dry",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "follow",
+      "rare_chance": 0.08,
+      "art": "ferret",
+      "breeds": [
+        {
+          "id": "sable_ferret",
+          "name": "蒙眼貂",
+          "price": 4000,
+          "description": "活泼，会钻管道",
+          "color": "#8a6a4a",
+          "accent": "#f0e3cc",
+          "mask": true
+        },
+        {
+          "id": "albino_ferret",
+          "name": "白貂",
+          "price": 4500,
+          "description": "温顺，好养",
+          "color": "#f2ece0",
+          "accent": "#ffffff"
+        },
+        {
+          "id": "cinnamon_ferret",
+          "name": "肉桂貂",
+          "price": 5000,
+          "description": "稀有，温和",
+          "color": "#c9a06a",
+          "accent": "#f0e3cc"
+        }
+      ]
+    },
+    {
+      "id": "chinchilla",
+      "name": "龙猫",
+      "category": "cage",
+      "house_types": [
+        "chinchilla_cage"
+      ],
+      "food_id": "chinchilla_food",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.08,
+      "art": "rodent",
+      "breeds": [
+        {
+          "id": "standard_chinchilla",
+          "name": "标准灰龙猫",
+          "price": 4000,
+          "description": "毛茸茸，需要沙浴",
+          "color": "#9a948c",
+          "accent": "#e6d3b6",
+          "build": "round"
+        },
+        {
+          "id": "beige_chinchilla",
+          "name": "米色龙猫",
+          "price": 4500,
+          "description": "温顺，好养",
+          "color": "#d8c3a5",
+          "accent": "#f0e3cc",
+          "build": "round"
+        },
+        {
+          "id": "white_chinchilla",
+          "name": "白色龙猫",
+          "price": 6000,
+          "description": "稀有，优雅",
+          "color": "#f2ece0",
+          "accent": "#ffffff",
+          "build": "round"
+        }
+      ]
+    },
+    {
+      "id": "young_livestock",
+      "name": "幼年畜牧",
+      "category": "companion",
+      "house_types": [
+        "young_animal_pen",
+        "duck_pond"
+      ],
+      "food_id": "hay",
+      "can_pet": true,
+      "can_play": true,
+      "can_follow": true,
+      "can_release": false,
+      "release_friendship": 50,
+      "special_behavior": "follow",
+      "rare_chance": 0.05,
+      "art": "quadruped",
+      "breeds": [
+        {
+          "id": "shetland_foal",
+          "name": "设特兰矮马驹",
+          "price": 3000,
+          "description": "温顺，长大后变坐骑",
+          "color": "#a9744f",
+          "accent": "#e6d3b6",
+          "art": "horse"
+        },
+        {
+          "id": "mini_foal",
+          "name": "迷你马驹",
+          "price": 3500,
+          "description": "好养，长大后变坐骑",
+          "color": "#c9a06a",
+          "accent": "#e6d3b6",
+          "art": "horse"
+        },
+        {
+          "id": "appaloosa_foal",
+          "name": "阿帕卢萨马驹",
+          "price": 5000,
+          "description": "活泼，长大后变坐骑",
+          "color": "#c9b48e",
+          "accent": "#e6d3b6",
+          "art": "horse"
+        },
+        {
+          "id": "arabian_foal",
+          "name": "阿拉伯马驹",
+          "price": 8000,
+          "description": "优雅，长大后变坐骑",
+          "color": "#e6d3b6",
+          "accent": "#e6d3b6",
+          "art": "horse"
+        },
+        {
+          "id": "blacknose_lamb",
+          "name": "黑鼻羊羔",
+          "price": 1200,
+          "description": "温顺，长大后变羊",
+          "color": "#f0e9dc",
+          "accent": "#e6d3b6",
+          "art": "lamb"
+        },
+        {
+          "id": "dorper_lamb",
+          "name": "杜泊羊羔",
+          "price": 1500,
+          "description": "好养，长大后变羊",
+          "color": "#efe9dc",
+          "accent": "#e6d3b6",
+          "art": "lamb"
+        },
+        {
+          "id": "merino_lamb",
+          "name": "美利奴羊羔",
+          "price": 2000,
+          "description": "毛质好，长大后变羊",
+          "color": "#f7f0dd",
+          "accent": "#e6d3b6",
+          "art": "lamb"
+        },
+        {
+          "id": "lamb_lamb",
+          "name": "小尾寒羊羔",
+          "price": 1000,
+          "description": "常见，长大后变羊",
+          "color": "#efe9dc",
+          "accent": "#e6d3b6",
+          "art": "lamb"
+        },
+        {
+          "id": "holstein_calf",
+          "name": "荷斯坦牛犊",
+          "price": 2500,
+          "description": "常见，长大后变牛",
+          "color": "#efe9dc",
+          "accent": "#e6d3b6",
+          "art": "calf"
+        },
+        {
+          "id": "jersey_calf",
+          "name": "娟姗牛犊",
+          "price": 3500,
+          "description": "温顺，长大后变牛",
+          "color": "#c9a06a",
+          "accent": "#e6d3b6",
+          "art": "calf"
+        },
+        {
+          "id": "angus_calf",
+          "name": "安格斯牛犊",
+          "price": 4000,
+          "description": "好养，长大后变牛",
+          "color": "#5f5a54",
+          "accent": "#e6d3b6",
+          "art": "calf"
+        },
+        {
+          "id": "wagyu_calf",
+          "name": "和牛犊",
+          "price": 6000,
+          "description": "稀有，长大后变牛",
+          "color": "#6f5a48",
+          "accent": "#e6d3b6",
+          "art": "calf"
+        },
+        {
+          "id": "mallard_duckling",
+          "name": "绿头鸭雏",
+          "price": 600,
+          "description": "会游泳，长大后变鸭",
+          "color": "#8a7a52",
+          "accent": "#e6d3b6",
+          "art": "duck"
+        },
+        {
+          "id": "call_duckling",
+          "name": "柯尔鸭雏",
+          "price": 2000,
+          "description": "可爱，长大后变鸭",
+          "color": "#efe9dc",
+          "accent": "#e6d3b6",
+          "art": "duck"
+        },
+        {
+          "id": "pekin_duckling",
+          "name": "北京鸭雏",
+          "price": 800,
+          "description": "好养，长大后变鸭",
+          "color": "#f2ece0",
+          "accent": "#e6d3b6",
+          "art": "duck"
+        },
+        {
+          "id": "mandarin_duckling",
+          "name": "鸳鸯雏",
+          "price": 1800,
+          "description": "稀有，长大后变鸳鸯鸭",
+          "color": "#c47b4a",
+          "accent": "#e6d3b6",
+          "art": "duck"
+        },
+        {
+          "id": "white_gosling",
+          "name": "白鹅雏",
+          "price": 900,
+          "description": "会护主，长大后变鹅",
+          "color": "#f2ece0",
+          "accent": "#e6d3b6",
+          "art": "goose"
+        },
+        {
+          "id": "lion_head_gosling",
+          "name": "狮头鹅雏",
+          "price": 1600,
+          "description": "好斗，长大后变鹅",
+          "color": "#b0a090",
+          "accent": "#e6d3b6",
+          "art": "goose"
+        },
+        {
+          "id": "embden_gosling",
+          "name": "埃姆登鹅雏",
+          "price": 1500,
+          "description": "好养，长大后变鹅",
+          "color": "#f7f0dd",
+          "accent": "#e6d3b6",
+          "art": "goose"
+        },
+        {
+          "id": "chinese_gosling",
+          "name": "中国鹅雏",
+          "price": 1000,
+          "description": "常见，长大后变鹅",
+          "color": "#b0a090",
+          "accent": "#e6d3b6",
+          "art": "goose"
+        },
+        {
+          "id": "bama_piglet",
+          "name": "巴马香猪仔",
+          "price": 1800,
+          "description": "好养，长大后变香猪",
+          "color": "#d9b8a0",
+          "accent": "#e6d3b6",
+          "art": "pig"
+        },
+        {
+          "id": "thai_piglet",
+          "name": "泰国香猪仔",
+          "price": 2000,
+          "description": "可爱，长大后变香猪",
+          "color": "#5f5a54",
+          "accent": "#e6d3b6",
+          "art": "pig"
+        },
+        {
+          "id": "kunekune_piglet",
+          "name": "酷你酷你猪仔",
+          "price": 4000,
+          "description": "温顺，长大后变香猪",
+          "color": "#c9a06a",
+          "accent": "#e6d3b6",
+          "art": "pig"
+        },
+        {
+          "id": "mini_piglet",
+          "name": "迷你猪仔",
+          "price": 1500,
+          "description": "常见，长大后变香猪",
+          "color": "#f0d8c8",
+          "accent": "#e6d3b6",
+          "art": "pig"
+        }
+      ]
+    },
+    {
+      "id": "reptile",
+      "name": "爬宠",
+      "category": "reptile",
+      "house_types": [
+        "reptile_tank",
+        "amphibian_tank"
+      ],
+      "food_id": "reptile_food",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.08,
+      "art": "lizard",
+      "breeds": [
+        {
+          "id": "leopard_gecko",
+          "name": "豹纹守宫",
+          "price": 1200,
+          "description": "温顺，好养",
+          "color": "#d8c08a",
+          "accent": "#b9c49a",
+          "art": "lizard"
+        },
+        {
+          "id": "bearded_dragon",
+          "name": "鬃狮蜥",
+          "price": 3500,
+          "description": "会点头，晒太阳",
+          "color": "#c9a06a",
+          "accent": "#b9c49a",
+          "art": "lizard"
+        },
+        {
+          "id": "blue_tongue",
+          "name": "蓝舌石龙子",
+          "price": 5000,
+          "description": "温顺，稀有",
+          "color": "#7f8a9a",
+          "accent": "#b9c49a",
+          "art": "lizard"
+        },
+        {
+          "id": "crested_gecko",
+          "name": "睫角守宫",
+          "price": 2000,
+          "description": "可爱，好养",
+          "color": "#b08a62",
+          "accent": "#b9c49a",
+          "art": "lizard"
+        },
+        {
+          "id": "corn_snake",
+          "name": "玉米蛇",
+          "price": 1800,
+          "description": "温顺，好养",
+          "color": "#c47b4a",
+          "accent": "#b9c49a",
+          "art": "snake"
+        },
+        {
+          "id": "ball_python",
+          "name": "球蟒",
+          "price": 5000,
+          "description": "温顺，稀有",
+          "color": "#6f5a48",
+          "accent": "#b9c49a",
+          "art": "snake"
+        },
+        {
+          "id": "king_snake",
+          "name": "王蛇",
+          "price": 2200,
+          "description": "活泼，好养",
+          "color": "#4f4a44",
+          "accent": "#b9c49a",
+          "art": "snake"
+        },
+        {
+          "id": "hognose_snake",
+          "name": "猪鼻蛇",
+          "price": 2600,
+          "description": "可爱，会装死",
+          "color": "#c9b48e",
+          "accent": "#b9c49a",
+          "art": "snake"
+        },
+        {
+          "id": "horned_frog",
+          "name": "角蛙",
+          "price": 1200,
+          "description": "蹲着不动，好养",
+          "color": "#8a9a5a",
+          "accent": "#b9c49a",
+          "art": "frog"
+        },
+        {
+          "id": "tree_frog",
+          "name": "树蛙",
+          "price": 1500,
+          "description": "会爬玻璃，雨天活跃",
+          "color": "#6f9a60",
+          "accent": "#b9c49a",
+          "art": "frog"
+        },
+        {
+          "id": "golden_frog",
+          "name": "金蛙",
+          "price": 2500,
+          "description": "稀有，好看",
+          "color": "#e8c95a",
+          "accent": "#b9c49a",
+          "art": "frog"
+        },
+        {
+          "id": "fire_bellied_toad",
+          "name": "红腹铃蟾",
+          "price": 1400,
+          "description": "受惊露红肚",
+          "color": "#8a8a7a",
+          "accent": "#b9c49a",
+          "art": "frog"
+        },
+        {
+          "id": "axolotl",
+          "name": "六角恐龙",
+          "price": 5000,
+          "description": "呆萌，好养",
+          "color": "#f0c9c9",
+          "accent": "#b9c49a",
+          "art": "salamander"
+        },
+        {
+          "id": "red_bellied_newt",
+          "name": "红腹蝾螈",
+          "price": 2000,
+          "description": "水陆两栖",
+          "color": "#8a8a7a",
+          "accent": "#b9c49a",
+          "art": "salamander"
+        },
+        {
+          "id": "fire_salamander",
+          "name": "火蝾螈",
+          "price": 4500,
+          "description": "稀有，好看",
+          "color": "#4f4a44",
+          "accent": "#b9c49a",
+          "art": "salamander"
+        },
+        {
+          "id": "chinese_giant_salamander",
+          "name": "娃娃鱼",
+          "price": 5000,
+          "description": "稀有，需要大缸",
+          "color": "#8a7a62",
+          "accent": "#b9c49a",
+          "art": "salamander"
+        },
+        {
+          "id": "sulcata",
+          "name": "苏卡达陆龟",
+          "price": 8000,
+          "description": "吃草，可长很大",
+          "color": "#c9b48e",
+          "accent": "#b9c49a",
+          "art": "turtle"
+        },
+        {
+          "id": "hermann",
+          "name": "赫曼陆龟",
+          "price": 3000,
+          "description": "好养，温顺",
+          "color": "#a8926c",
+          "accent": "#b9c49a",
+          "art": "turtle"
+        },
+        {
+          "id": "russian_tortoise",
+          "name": "俄罗斯陆龟",
+          "price": 3500,
+          "description": "好养，活泼",
+          "color": "#c9b48e",
+          "accent": "#b9c49a",
+          "art": "turtle"
+        },
+        {
+          "id": "star_tortoise",
+          "name": "印度星龟",
+          "price": 9000,
+          "description": "稀有，高价",
+          "color": "#d8c08a",
+          "accent": "#b9c49a",
+          "art": "turtle"
+        }
+      ]
+    },
+    {
+      "id": "insect",
+      "name": "昆虫",
+      "category": "insect",
+      "house_types": [
+        "insect_box",
+        "butterfly_house",
+        "crab_tank"
+      ],
+      "food_id": "jelly",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.06,
+      "art": "insect",
+      "breeds": [
+        {
+          "id": "japanese_rhino",
+          "name": "日本独角仙",
+          "price": 1200,
+          "description": "夏季限定，可斗虫",
+          "color": "#3f3a36",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "five_horned",
+          "name": "五角大兜虫",
+          "price": 2500,
+          "description": "稀有，斗虫强",
+          "color": "#3f3a36",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "hercules",
+          "name": "海格力斯",
+          "price": 4000,
+          "description": "稀有，最大兜虫",
+          "color": "#c9a04e",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "atlas",
+          "name": "阿特拉斯",
+          "price": 3500,
+          "description": "稀有，最大兜虫之一",
+          "color": "#8a7a62",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "flat_stag",
+          "name": "扁锹",
+          "price": 1000,
+          "description": "夏季限定，可斗虫",
+          "color": "#3f3a36",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "saw_stag",
+          "name": "锯锹",
+          "price": 1500,
+          "description": "好斗，斗虫强",
+          "color": "#3f3a36",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "miyama_stag",
+          "name": "深山锹",
+          "price": 3000,
+          "description": "稀有，美丽",
+          "color": "#c9a06a",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "golden_stag",
+          "name": "黄金锹",
+          "price": 5000,
+          "description": "极稀有，收藏级",
+          "color": "#e8c95a",
+          "accent": "#e8c95a",
+          "art": "beetle"
+        },
+        {
+          "id": "swallowtail",
+          "name": "凤蝶",
+          "price": 800,
+          "description": "美丽，飞舞",
+          "color": "#e8c95a",
+          "accent": "#e8c95a",
+          "art": "butterfly"
+        },
+        {
+          "id": "cabbage_white",
+          "name": "粉蝶",
+          "price": 500,
+          "description": "常见，好养",
+          "color": "#efe9dc",
+          "accent": "#e8c95a",
+          "art": "butterfly"
+        },
+        {
+          "id": "monarch_butterfly",
+          "name": "帝王蝶",
+          "price": 2000,
+          "description": "迁徙感，稀有",
+          "color": "#e08a4e",
+          "accent": "#e8c95a",
+          "art": "butterfly"
+        },
+        {
+          "id": "blue_morpho",
+          "name": "蓝闪蝶",
+          "price": 5000,
+          "description": "极稀有，收藏级",
+          "color": "#5f97d8",
+          "accent": "#e8c95a",
+          "art": "butterfly"
+        },
+        {
+          "id": "chinese_mantis",
+          "name": "中华大刀螳",
+          "price": 1000,
+          "description": "好斗，捕食",
+          "color": "#6f9a60",
+          "accent": "#e8c95a",
+          "art": "mantis"
+        },
+        {
+          "id": "orchid_mantis",
+          "name": "兰花螳",
+          "price": 3000,
+          "description": "稀有，拟态美",
+          "color": "#f0c9d8",
+          "accent": "#e8c95a",
+          "art": "mantis"
+        },
+        {
+          "id": "ghost_mantis",
+          "name": "幽灵螳",
+          "price": 2500,
+          "description": "稀有，拟态",
+          "color": "#c9b48e",
+          "accent": "#e8c95a",
+          "art": "mantis"
+        },
+        {
+          "id": "devil_mantis",
+          "name": "魔鬼螳",
+          "price": 2800,
+          "description": "稀有，好斗",
+          "color": "#8a6a4a",
+          "accent": "#e8c95a",
+          "art": "mantis"
+        },
+        {
+          "id": "tarantula",
+          "name": "捕鸟蛛",
+          "price": 3000,
+          "description": "温顺，好养",
+          "color": "#6f5a48",
+          "accent": "#e8c95a",
+          "art": "spider"
+        },
+        {
+          "id": "jumping_spider",
+          "name": "跳蛛",
+          "price": 800,
+          "description": "可爱，会跳",
+          "color": "#4f4a44",
+          "accent": "#e8c95a",
+          "art": "spider"
+        },
+        {
+          "id": "golden_silk",
+          "name": "黄金蛛",
+          "price": 2500,
+          "description": "稀有，结金色网",
+          "color": "#e8c95a",
+          "accent": "#e8c95a",
+          "art": "spider"
+        },
+        {
+          "id": "peacock_spider",
+          "name": "孔雀蛛",
+          "price": 5000,
+          "description": "极稀有，求偶舞",
+          "color": "#5f97b0",
+          "accent": "#e8c95a",
+          "art": "spider"
+        },
+        {
+          "id": "gray_hermit",
+          "name": "灰白寄居蟹",
+          "price": 800,
+          "description": "好养，换壳",
+          "color": "#c9c2b6",
+          "accent": "#e8c95a",
+          "art": "crab"
+        },
+        {
+          "id": "strawberry_hermit",
+          "name": "草莓寄居蟹",
+          "price": 2000,
+          "description": "稀有，好看",
+          "color": "#c4553f",
+          "accent": "#e8c95a",
+          "art": "crab"
+        },
+        {
+          "id": "blue_hermit",
+          "name": "蓝寄居蟹",
+          "price": 2200,
+          "description": "稀有，好看",
+          "color": "#5f97d8",
+          "accent": "#e8c95a",
+          "art": "crab"
+        },
+        {
+          "id": "land_hermit",
+          "name": "陆寄居蟹",
+          "price": 1500,
+          "description": "好养，活泼",
+          "color": "#8a7a62",
+          "accent": "#e8c95a",
+          "art": "crab"
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "name": "特殊",
+      "category": "special",
+      "house_types": [
+        "aviary",
+        "fox_den",
+        "deer_pen",
+        "otter_pool",
+        "penguin_pool",
+        "seal_pool",
+        "dragon_den"
+      ],
+      "food_id": "fish_dry",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": true,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.05,
+      "art": "owl",
+      "breeds": [
+        {
+          "id": "snowy_owl",
+          "name": "雪鸮",
+          "price": 8000,
+          "description": "夜行，稀有",
+          "color": "#f2ece0",
+          "accent": "#e8c95a",
+          "art": "owl"
+        },
+        {
+          "id": "barn_owl",
+          "name": "仓鸮",
+          "price": 7000,
+          "description": "夜行，送小礼物",
+          "color": "#e6d3b6",
+          "accent": "#e8c95a",
+          "art": "owl"
+        },
+        {
+          "id": "screech_owl",
+          "name": "角鸮",
+          "price": 5000,
+          "description": "夜行，小型",
+          "color": "#8a7a62",
+          "accent": "#e8c95a",
+          "art": "owl"
+        },
+        {
+          "id": "eagle_owl",
+          "name": "雕鸮",
+          "price": 9000,
+          "description": "稀有，威武",
+          "color": "#b08a62",
+          "accent": "#e8c95a",
+          "art": "owl"
+        },
+        {
+          "id": "red_fox",
+          "name": "赤狐",
+          "price": 5000,
+          "description": "狡猾，偷东西",
+          "color": "#c47b4a",
+          "accent": "#e8c95a",
+          "art": "fox"
+        },
+        {
+          "id": "arctic_fox",
+          "name": "北极狐",
+          "price": 8000,
+          "description": "稀有，温顺",
+          "color": "#f2ece0",
+          "accent": "#e8c95a",
+          "art": "fox"
+        },
+        {
+          "id": "silver_fox",
+          "name": "银狐",
+          "price": 8000,
+          "description": "稀有，优雅",
+          "color": "#4f4a44",
+          "accent": "#e8c95a",
+          "art": "fox"
+        },
+        {
+          "id": "fennec_fox",
+          "name": "耳廓狐",
+          "price": 9000,
+          "description": "稀有，可爱",
+          "color": "#e6d3b6",
+          "accent": "#e8c95a",
+          "art": "fox"
+        },
+        {
+          "id": "sika_deer",
+          "name": "梅花鹿",
+          "price": 6000,
+          "description": "胆小，好感高会靠近",
+          "color": "#b08a62",
+          "accent": "#e8c95a",
+          "art": "deer"
+        },
+        {
+          "id": "white_deer",
+          "name": "白鹿",
+          "price": 12000,
+          "description": "极稀有，神圣感",
+          "color": "#f7f0dd",
+          "accent": "#e8c95a",
+          "art": "deer"
+        },
+        {
+          "id": "muntjac",
+          "name": "麂",
+          "price": 5000,
+          "description": "胆小，好养",
+          "color": "#8a6a4a",
+          "accent": "#e8c95a",
+          "art": "deer"
+        },
+        {
+          "id": "spotted_deer",
+          "name": "斑鹿",
+          "price": 5500,
+          "description": "常见，温顺",
+          "color": "#c9a06a",
+          "accent": "#e8c95a",
+          "art": "deer"
+        },
+        {
+          "id": "asian_small_clawed",
+          "name": "亚洲小爪水獭",
+          "price": 8000,
+          "description": "仰泳、抱石头",
+          "color": "#8a6a4a",
+          "accent": "#e8c95a",
+          "art": "otter"
+        },
+        {
+          "id": "sea_otter",
+          "name": "海獭",
+          "price": 9000,
+          "description": "仰泳、敲贝壳",
+          "color": "#6f5a48",
+          "accent": "#e8c95a",
+          "art": "otter"
+        },
+        {
+          "id": "giant_otter",
+          "name": "巨獭",
+          "price": 12000,
+          "description": "稀有，活泼",
+          "color": "#5f4a3a",
+          "accent": "#e8c95a",
+          "art": "otter"
+        },
+        {
+          "id": "river_otter",
+          "name": "欧亚水獭",
+          "price": 8000,
+          "description": "好养，游泳",
+          "color": "#8a6a4a",
+          "accent": "#e8c95a",
+          "art": "otter"
+        },
+        {
+          "id": "adelie_penguin",
+          "name": "阿德利企鹅",
+          "price": 10000,
+          "description": "走路摇摆，游泳",
+          "color": "#4f4a44",
+          "accent": "#e8c95a",
+          "art": "penguin"
+        },
+        {
+          "id": "emperor_penguin",
+          "name": "帝企鹅幼崽",
+          "price": 15000,
+          "description": "稀有，长大后变大",
+          "color": "#9a948c",
+          "accent": "#e8c95a",
+          "art": "penguin"
+        },
+        {
+          "id": "gentoo_penguin",
+          "name": "巴布亚企鹅",
+          "price": 11000,
+          "description": "游泳快",
+          "color": "#4f4a44",
+          "accent": "#e8c95a",
+          "art": "penguin"
+        },
+        {
+          "id": "little_penguin",
+          "name": "小蓝企鹅",
+          "price": 9000,
+          "description": "最小企鹅，可爱",
+          "color": "#5f7f9a",
+          "accent": "#e8c95a",
+          "art": "penguin"
+        },
+        {
+          "id": "harbor_seal",
+          "name": "斑海豹",
+          "price": 8000,
+          "description": "圆滚滚，游泳",
+          "color": "#9a948c",
+          "accent": "#e8c95a",
+          "art": "seal"
+        },
+        {
+          "id": "harp_seal_pup",
+          "name": "竖琴海豹幼崽",
+          "price": 10000,
+          "description": "稀有，可爱",
+          "color": "#f7f0dd",
+          "accent": "#e8c95a",
+          "art": "seal"
+        },
+        {
+          "id": "ringed_seal",
+          "name": "环斑海豹",
+          "price": 8500,
+          "description": "好养，游泳",
+          "color": "#8a8a80",
+          "accent": "#e8c95a",
+          "art": "seal"
+        },
+        {
+          "id": "little_azure_dragon",
+          "name": "小青龙",
+          "price": 0,
+          "description": "幻想系，飞行",
+          "color": "#5f97b0",
+          "accent": "#e8c95a",
+          "art": "dragon"
+        },
+        {
+          "id": "little_gold_dragon",
+          "name": "小金龙",
+          "price": 0,
+          "description": "幻想系，稀有",
+          "color": "#e8c95a",
+          "accent": "#e8c95a",
+          "art": "dragon"
+        }
+      ]
+    },
+    {
+      "id": "aquatic_extended",
+      "name": "水生扩展",
+      "category": "aquatic",
+      "house_types": [
+        "saltwater_tank",
+        "jellyfish_tank",
+        "planted_tank"
+      ],
+      "food_id": "seaweed",
+      "can_pet": false,
+      "can_play": false,
+      "can_follow": false,
+      "can_release": false,
+      "release_friendship": 50,
+      "special_behavior": "observe",
+      "rare_chance": 0.06,
+      "art": "fish",
+      "breeds": [
+        {
+          "id": "spotted_seahorse",
+          "name": "斑海马",
+          "price": 1500,
+          "description": "直立游动，卷尾巴",
+          "color": "#c9a06a",
+          "accent": "#e8f2f4",
+          "art": "seahorse"
+        },
+        {
+          "id": "dwarf_seahorse",
+          "name": "豆丁海马",
+          "price": 3000,
+          "description": "稀有，可爱",
+          "color": "#f0c9d8",
+          "accent": "#e8f2f4",
+          "art": "seahorse"
+        },
+        {
+          "id": "leafy_seahorse",
+          "name": "叶海马",
+          "price": 3500,
+          "description": "稀有，拟态",
+          "color": "#8a9a5a",
+          "accent": "#e8f2f4",
+          "art": "seahorse"
+        },
+        {
+          "id": "pygmy_seahorse",
+          "name": "侏儒海马",
+          "price": 4000,
+          "description": "极稀有",
+          "color": "#e8c95a",
+          "accent": "#e8f2f4",
+          "art": "seahorse"
+        },
+        {
+          "id": "ocellaris_clownfish",
+          "name": "公子小丑",
+          "price": 800,
+          "description": "活泼，和海葵共生",
+          "color": "#e08a4e",
+          "accent": "#e8f2f4",
+          "art": "fish"
+        },
+        {
+          "id": "black_clownfish",
+          "name": "黑边小丑",
+          "price": 1200,
+          "description": "好看，好养",
+          "color": "#8a5a3a",
+          "accent": "#e8f2f4",
+          "art": "fish"
+        },
+        {
+          "id": "percula_clownfish",
+          "name": "黑豹小丑",
+          "price": 2000,
+          "description": "稀有，好看",
+          "color": "#e08a4e",
+          "accent": "#e8f2f4",
+          "art": "fish"
+        },
+        {
+          "id": "maroon_clownfish",
+          "name": "金透红小丑",
+          "price": 1500,
+          "description": "好养，活泼",
+          "color": "#9a4a3a",
+          "accent": "#e8f2f4",
+          "art": "fish"
+        },
+        {
+          "id": "moon_jellyfish",
+          "name": "海月水母",
+          "price": 1800,
+          "description": "漂浮，梦幻",
+          "color": "#cfd8e8",
+          "accent": "#e8f2f4",
+          "art": "jellyfish"
+        },
+        {
+          "id": "upside_down_jellyfish",
+          "name": "倒立水母",
+          "price": 3000,
+          "description": "稀有，好看",
+          "color": "#e8dcc8",
+          "accent": "#e8f2f4",
+          "art": "jellyfish"
+        },
+        {
+          "id": "cannonball_jellyfish",
+          "name": "炮弹水母",
+          "price": 3500,
+          "description": "稀有，可爱",
+          "color": "#8fa8c9",
+          "accent": "#e8f2f4",
+          "art": "jellyfish"
+        },
+        {
+          "id": "flower_hat_jellyfish",
+          "name": "花帽水母",
+          "price": 5000,
+          "description": "极稀有",
+          "color": "#f2c9d8",
+          "accent": "#e8f2f4",
+          "art": "jellyfish"
+        },
+        {
+          "id": "fiddler_crab",
+          "name": "招潮蟹",
+          "price": 800,
+          "description": "挥钳子，沙滩",
+          "color": "#c47b4a",
+          "accent": "#e8f2f4",
+          "art": "crab"
+        },
+        {
+          "id": "hermit_crab_small",
+          "name": "小寄居蟹",
+          "price": 500,
+          "description": "换壳，活泼",
+          "color": "#c9c2b6",
+          "accent": "#e8f2f4",
+          "art": "crab"
+        },
+        {
+          "id": "vampire_crab",
+          "name": "吸血鬼蟹",
+          "price": 2500,
+          "description": "稀有，好看",
+          "color": "#8a4a5a",
+          "accent": "#e8f2f4",
+          "art": "crab"
+        },
+        {
+          "id": "halloween_crab",
+          "name": "万圣节蟹",
+          "price": 3000,
+          "description": "极稀有",
+          "color": "#e08a4e",
+          "accent": "#e8f2f4",
+          "art": "crab"
+        },
+        {
+          "id": "cherry_shrimp",
+          "name": "樱花虾",
+          "price": 300,
+          "description": "群游，清理藻类",
+          "color": "#f0a0a0",
+          "accent": "#e8f2f4",
+          "art": "shrimp"
+        },
+        {
+          "id": "crystal_red_shrimp",
+          "name": "水晶虾",
+          "price": 800,
+          "description": "好看，好养",
+          "color": "#e8e0d8",
+          "accent": "#e8f2f4",
+          "art": "shrimp"
+        },
+        {
+          "id": "amano_shrimp",
+          "name": "大和藻虾",
+          "price": 500,
+          "description": "清理藻类",
+          "color": "#c9d0d0",
+          "accent": "#e8f2f4",
+          "art": "shrimp"
+        },
+        {
+          "id": "blue_bolt_shrimp",
+          "name": "蓝钻虾",
+          "price": 2000,
+          "description": "极稀有",
+          "color": "#4a6ad8",
+          "accent": "#e8f2f4",
+          "art": "shrimp"
+        }
+      ]
+    }
+  ],
+  "follow_friendship": 50,
+  "young_growth_days": 5,
+  "release_seconds": 20,
+  "insect_battle_reward": 100,
+  "dog_chase_friendship": 80,
+  "dog_chase_cooldown": 30
+}

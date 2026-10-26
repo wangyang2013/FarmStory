@@ -1,0 +1,1190 @@
+# 牧场物语风格单机游戏 · 个人开发要求
+
+> 定位：单人开发，自己玩，纯离线，不做发布/商业化  
+> 原则：只做会坑到自己的事；发布、合规、平台、多语言一律不做  
+> 目标：存档不丢、改崩能回、数值能调、操作顺手、授权干净
+
+---
+
+## 目录
+
+1. 存档容错
+2. 版本控制
+3. 配置数据驱动
+4. 调试作弊面板
+5. 经济数值别太离谱
+6. 音频：来源、授权与管理
+7. 操作顺手
+8. 简单的测试习惯
+9. 场景节点架构统一
+10. 最小清单与开发习惯
+
+---
+
+## 一、存档容错
+
+### 1.1 目标
+
+- 改结构后旧档能读。
+- 读档失败不白屏。
+- 存档损坏有备份。
+- 自动存档不丢进度。
+
+### 1.2 存档字段结构
+
+```json
+{
+  "save_version": 3,
+  "saved_at": "2026-01-01 20:15",
+  "play_time_seconds": 36000,
+  "player": {
+    "name": "小明",
+    "appearance": {},
+    "money": 1250,
+    "stamina": 80
+  },
+  "world": {
+    "day": 12,
+    "season": "spring",
+    "weather": "sunny",
+    "farm_map": "standard"
+  },
+  "farm_tiles": [],
+  "animal_list": [],
+  "inventory": [],
+  "npc_friendship": {},
+  "unlock_book": {},
+  "fruit_trees_planted": [],
+  "apiary": {},
+  "fishing_tools": {}
+}
+```
+
+### 1.3 版本迁移
+
+- `CURRENT_SAVE_VERSION` 常量放在 `SaveSystem.gd`。
+- 读档时如果 `save_version < CURRENT_SAVE_VERSION`，走迁移函数。
+- 迁移函数按版本号逐级补字段，不覆盖已有值。
+- 迁移完成后可选立即保存一次。
+
+```gdscript
+const CURRENT_SAVE_VERSION := 3
+
+static func migrate(data: Dictionary) -> Dictionary:
+    var v: int = data.get("save_version", 1)
+    if v < 2:
+        data["play_time_seconds"] = 0
+        v = 2
+    if v < 3:
+        data["fishing_tools"] = {
+            "crab_pots_placed": 0,
+            "bait_equipped": "",
+            "tackle_equipped": "",
+            "crab_pot_inventory": {}
+        }
+        v = 3
+    data["save_version"] = v
+    return data
+```
+
+### 1.4 读档流程
+
+1. 读 `save01.json`。
+2. 解析失败 → 读 `save01.bak.json`。
+3. 再失败 → 返回空存档，弹提示“存档损坏，已新建”。
+4. 成功 → 执行 `migrate()`。
+5. 迁移后字段缺失 → 用默认值补齐。
+6. 补齐后如果版本有变化，立即保存一次。
+
+### 1.5 写档流程
+
+1. 写临时文件 `save01.tmp.json`。
+2. 写完关闭文件。
+3. 把现有 `save01.json` 复制为 `save01.bak.json`。
+4. 把 `save01.tmp.json` 重命名为 `save01.json`。
+5. 任何一步失败，保留旧档并弹提示。
+
+> 不要直接覆盖 `save01.json`，中途崩溃会丢档。
+
+### 1.6 自动存档点
+
+| 时点 | 是否自动存档 |
+|---|---|
+| 睡觉后 | 是 |
+| 换日前 | 是 |
+| 节日开始 | 是 |
+| 进入矿洞 | 可选 |
+| 退出游戏 | 是 |
+| 手动存档 | 是 |
+
+### 1.7 多存档槽
+
+- 至少 3 个槽：`save01.json` / `save02.json` / `save03.json`。
+- 每个槽独立备份 `.bak.json`。
+- 存档界面显示：天数、季节、金钱、游玩时长、保存时间。
+
+### 1.8 检查项
+
+- 新增字段后，旧档能正常读。
+- 手动改坏存档，游戏能回退到 bak。
+- 删掉 bak，游戏能回退到空档并提示。
+- 睡觉后自动存档，重启游戏进度还在。
+- 存档写一半强制关闭，旧档仍在。
+
+---
+
+## 二、版本控制
+
+### 2.1 目标
+
+- 改崩能回滚。
+- 每天有记录。
+- 大文件不污染仓库。
+
+### 2.2 基础配置
+
+`.gitignore`：
+
+```text
+.godot/
+export/
+*.tmp
+*.bak
+*.log
+.DS_Store
+Thumbs.db
+```
+
+### 2.3 分支策略
+
+单人开发不需要复杂分支，够用即可：
+
+| 分支 | 用途 |
+|---|---|
+| `main` | 能跑通的版本 |
+| `dev` | 日常开发 |
+| `feature/xxx` | 大改前临时分支 |
+
+规则：
+
+- 每天在 `dev` 上开发。
+- `dev` 跑通后合并到 `main`。
+- 大改（改存档结构、换架构）前开 `feature/` 分支。
+- 改崩直接切回 `main`。
+
+### 2.4 commit 规范
+
+格式：
+
+```text
+类型: 简短说明
+```
+
+类型：
+
+- `feat`：新功能
+- `fix`：修 bug
+- `refactor`：重构
+- `config`：改配置数值
+- `art`：美术资源
+- `audio`：音频资源
+- `save`：存档结构变更
+- `chore`：杂项
+
+示例：
+
+```text
+feat: 加入养蜂系统
+config: 调整萝卜售价 35 -> 40
+audio: 加入春季 BGM 与 12 个 UI 音效
+save: 存档版本升到 3，加入 fishing_tools
+fix: 修复换季作物不枯萎
+```
+
+### 2.5 tag 与回滚
+
+- 每次存档结构变更前打 tag：`git tag save-v2`。
+- 每个大版本打 tag：`git tag v0.1.0`。
+- 回滚：`git checkout save-v2` 或 `git reset --hard v0.1.0`。
+
+### 2.6 大文件
+
+- 音频、大图如果仓库变大，用 Git LFS。
+- 或者把大资源放外部目录，仓库只存代码和配置。
+
+### 2.7 CHANGELOG
+
+项目根目录 `CHANGELOG.md`：
+
+```markdown
+## 2026-01-01
+- 加入养蜂系统
+- 存档版本升到 3
+- 调整萝卜售价
+- 加入春季 BGM
+
+## 2025-12-30
+- 加入果树配置
+- 修复钓鱼小游戏暂停不生效
+```
+
+### 2.8 检查项
+
+- `.godot/` 没进仓库。
+- 每天至少一次 commit。
+- 改存档结构前有 tag。
+- 改崩能用 tag 回滚。
+- CHANGELOG 有记录。
+
+---
+
+## 三、配置数据驱动
+
+### 3.1 目标
+
+- 改数值不改代码。
+- 配置有校验，错了好排查。
+- 配置 ID 和存档解耦。
+
+### 3.2 目录结构
+
+```text
+res://config/
+├── crops.json
+├── animals.json
+├── fishes.json
+├── fruit_trees.json
+├── fishing_tools.json
+├── beekeeping.json
+├── recipes.json
+├── shops.json
+├── npcs.json
+└── economy.json
+```
+
+### 3.3 加载器
+
+```gdscript
+extends RefCounted
+
+static func load_json(path: String) -> Variant:
+    if not FileAccess.file_exists(path):
+        push_error("配置不存在: " + path)
+        return null
+    var file := FileAccess.open(path, FileAccess.READ)
+    var parsed = JSON.parse_string(file.get_as_text())
+    file.close()
+    if parsed == null:
+        push_error("配置解析失败: " + path)
+    return parsed
+
+static func index_by_id(items: Array) -> Dictionary:
+    var result := {}
+    for item in items:
+        var id = item.get("id", "")
+        if id == "":
+            push_error("配置缺 id: " + str(item))
+            continue
+        if result.has(id):
+            push_error("配置 id 重复: " + id)
+            continue
+        result[id] = item
+    return result
+```
+
+### 3.4 校验规则
+
+启动时检查：
+
+- 必填字段是否缺失。
+- ID 是否重复。
+- 引用的 ID 是否存在。
+- 数值是否在合理范围（价格 > 0，概率 0~1）。
+
+```gdscript
+static func validate_crop(crop: Dictionary) -> Array:
+    var errors := []
+    for key in ["id", "name", "season", "grow_day", "base_price"]:
+        if not crop.has(key):
+            errors.append("缺字段: " + key)
+    if crop.get("base_price", 0) <= 0:
+        errors.append("base_price 必须 > 0")
+    if crop.get("grow_day", 0) <= 0:
+        errors.append("grow_day 必须 > 0")
+    return errors
+```
+
+### 3.5 ID 规范
+
+- 全小写，下划线分隔。
+- 作物：`turnip`、`sweetpotato`。
+- 果树：`apple_tree`，果实 `apple`。
+- 鱼：`trout`。
+- 蜂产品：`honey`、`forest_honey`。
+- 一旦进存档，ID 不改；显示名可改。
+
+### 3.6 热重载（可选）
+
+- 调试模式下按 F5 重新加载配置。
+- 只影响新生成的对象。
+- 改数值不用重启游戏。
+
+```gdscript
+if OS.is_debug_build() and Input.is_action_just_pressed("reload_config"):
+    ConfigLoader.reload_all()
+```
+
+### 3.7 检查项
+
+- 改价格不用改代码。
+- 配置 ID 重复有报错。
+- 配置缺字段有报错。
+- 存档里的 ID 和配置 ID 一致。
+- 改配置后旧档能读。
+
+---
+
+## 四、调试作弊面板
+
+### 4.1 目标
+
+- 快速测试后期内容。
+- 不破坏正式玩法。
+- 只在 debug 构建启用。
+
+### 4.2 开关
+
+```gdscript
+func _unhandled_input(event):
+    if OS.is_debug_build() and event.is_action_pressed("debug_panel"):
+        debug_panel.visible = not debug_panel.visible
+```
+
+正式构建里 `OS.is_debug_build()` 返回 false，面板不出现。
+
+### 4.3 功能清单
+
+**玩家**
+
+- 加钱 / 设钱。
+- 满体力 / 设体力。
+- 加物品 / 清背包。
+- 传送到场景。
+
+**时间**
+
+- 跳小时。
+- 跳天。
+- 跳季节。
+- 切天气。
+
+**农场**
+
+- 所有作物成熟。
+- 所有动物满好感。
+- 解锁全部图鉴。
+- 解锁全部配方。
+
+**其他**
+
+- 显示碰撞框。
+- 显示交互范围。
+- 显示 Y-sort 线。
+- 时间加速开关。
+- 重新加载配置。
+
+### 4.4 快捷键建议
+
+| 按键 | 功能 |
+|---|---|
+| F1 | 开关调试面板 |
+| F2 | 加 1000 钱 |
+| F3 | 跳 1 小时 |
+| F4 | 跳 1 天 |
+| F5 | 重载配置 |
+| F6 | 显示碰撞框 |
+| F7 | 作物全熟 |
+| F8 | 解锁图鉴 |
+
+### 4.5 UI 设计
+
+- 半透明面板，右下角。
+- 按钮排列，不遮挡玩法区。
+- 每个按钮旁边显示当前值。
+- 关闭按钮明显。
+
+### 4.6 检查项
+
+- 正式构建里面板打不开。
+- 加钱、加物品不报错。
+- 跳时间后作物、动物、NPC 状态正确。
+- 重载配置不崩。
+- 调试面板不影响正常存档。
+
+---
+
+## 五、经济数值别太离谱
+
+### 5.1 目标
+
+- 第一年能扩建。
+- 不会钱多到没意思。
+- 不会穷到玩不下去。
+
+### 5.2 核心曲线
+
+| 项目 | 目标 |
+|---|---|
+| 第一头牛 | 第 15~25 天能买 |
+| 第一次扩建 | 第 1 季末到第 2 季初 |
+| 第一年结束 | 能买齐基础工具升级 |
+| 加工品收入 | 不超过原料 5 倍 |
+| 稀有物品收入 | 不超过普通 3 倍 |
+
+### 5.3 收支速查
+
+```text
+每日收入 = 作物收益 + 动物产物 + 钓鱼/采矿 + 加工品
+每日支出 = 种子 + 饲料 + 工资 + 工具修理
+回本天数 = 投入成本 / 每日净收入
+```
+
+### 5.4 作物日收益
+
+单格作物日收益 = `(售价 - 种子价) / 生长天数`。
+
+| 作物 | 种子 | 售价 | 天数 | 日收益 |
+|---|---|---|---|---|
+| 萝卜 | 20 | 35 | 4 | 3.75 |
+| 土豆 | 30 | 40 | 5 | 2 |
+| 草莓 | 40 | 45 | 8 | 0.6（多次收） |
+| 南瓜 | 70 | 100 | 13 | 2.3 |
+
+规则：
+
+- 日收益不要全部高于 5，否则后期无脑种一种。
+- 多次采收作物日收益偏低，但总收益高。
+- 稀有作物日收益可高，但概率低。
+
+### 5.5 动物回本
+
+回本天数 = `动物价格 / (每日产物收益 - 每日饲料)`。
+
+| 动物 | 价格 | 日收益 | 饲料 | 回本 |
+|---|---|---|---|---|
+| 鸡 | 500 | 50 | 20 | 17 天 |
+| 牛 | 4000 | 200 | 50 | 27 天 |
+| 羊 | 3500 | 150 | 50 | 35 天 |
+
+规则：
+
+- 回本 15~40 天合理。
+- 回本太快会让动物无脑买。
+- 回本太慢会劝退。
+
+### 5.6 加工倍率
+
+| 加工品 | 倍率 | 说明 |
+|---|---|---|
+| 奶酪 | ×3 | 合理 |
+| 布料 | ×4 | 偏上限 |
+| 腌菜 | ×2.5 | 合理 |
+| 葡萄酒 | ×5 | 上限，谨慎 |
+| 啤酒 | ×4 | 偏上限 |
+
+规则：
+
+- 加工倍率不超过 5。
+- 需要稀有材料的加工品可以高一点。
+- 加工时间长，倍率高是合理的。
+
+### 5.7 配置化
+
+全部放 `config/economy.json`：
+
+```json
+{
+  "start_money": 500,
+  "daily_salary": 150,
+  "crop_day_income_target": [1, 6],
+  "animal_payback_days": [15, 40],
+  "processing_max_multiplier": 5
+}
+```
+
+### 5.8 检查项
+
+- 第一年能买牛。
+- 第一季末能扩建。
+- 加工品不会让钱多到没意思。
+- 稀有物品售价不超过普通 3 倍。
+- 日收益没有单一作物碾压。
+
+---
+
+## 六、音频：来源、授权与管理
+
+### 6.1 目标
+
+- 音频来源清楚，授权干净。
+- BGM / SFX 分开调。
+- 设置能保存。
+- 切换场景有淡入淡出。
+- 自己能快速找到、替换、扩充音频。
+
+### 6.2 先看懂授权
+
+| 授权类型 | 能否商用 | 是否需要署名 | 说明 |
+|---|---|---|---|
+| CC0 | 可以 | 不需要 | 最省心，可随意使用、修改、无需署名 |
+| CC BY | 可以 | 必须 | 必须标注原作者 |
+| CC BY-NC | 不可以 | 需要 | 仅限非商业，任何盈利项目不能用 |
+| Royalty-Free | 通常可以 | 看条款 | 免版税，不等于免费，仍需遵守具体协议 |
+
+> 自己玩不商用，CC BY-NC 也能用；但只要未来可能公开或上架，从一开始就只用 CC0 或 CC BY。
+
+### 6.3 BGM 场景清单
+
+| 编号 | 场景 | 触发条件 | 优先级 |
+|---|---|---|---|
+| bgm_spring | 春季户外 | 春季在农场/小镇/山上 | 必须 |
+| bgm_summer | 夏季户外 | 夏季户外 | 必须 |
+| bgm_autumn | 秋季户外 | 秋季户外 | 必须 |
+| bgm_winter | 冬季户外 | 冬季户外 | 必须 |
+| bgm_town | 小镇 | 进入小镇区域 | 必须 |
+| bgm_farm | 农场 | 在农场区域 | 可选，可与季节共用 |
+| bgm_mine | 矿洞 | 进入矿洞 | 必须 |
+| bgm_night | 夜晚 | 20:00 后户外 | 建议 |
+| bgm_festival | 节日 | 节日当天 | 建议 |
+| bgm_indoor | 室内 | 进入房屋/商店 | 可选 |
+
+规则：
+
+- 季节 BGM 是核心，四个季节至少各一首。
+- 矿洞 BGM 氛围和户外明显不同。
+- 夜晚可以是白天 BGM 的变奏或独立曲目。
+- 节日 BGM 独立，不和其他场景混用。
+- 室内可以共用一首安静 BGM，或直接静音只留环境音。
+
+### 6.4 BGM 时长与循环
+
+- 单首 BGM 建议 1.5~3 分钟。
+- 必须可无缝循环。
+- 循环点放在自然乐句结尾，不要突然切断。
+- 导出前在音频软件里确认循环点无爆音。
+- 如果曲目较短，至少 60 秒，避免循环感太强。
+
+### 6.5 BGM 格式与规格
+
+| 项目 | 要求 |
+|---|---|
+| 格式 | OGG Vorbis（推荐）或 WAV |
+| 采样率 | 44100 Hz |
+| 位深 | 16 bit |
+| 声道 | 立体声 |
+| 响度 | 统一做响度归一化，避免切歌音量忽大忽小 |
+| 循环元数据 | OGG 可用 loop 标签，或在代码里设 loop 点 |
+
+规则：
+
+- 源文件保留 WAV，游戏内用 OGG 减小体积。
+- 所有 BGM 响度尽量一致，切歌不炸耳。
+- 不要用 MP3，循环点会有空隙。
+
+### 6.6 BGM 风格要求
+
+- 整体治愈、轻松、乡村感。
+- 乐器以原声为主：吉他、钢琴、长笛、手风琴、弦乐、轻打击。
+- 低饱和情绪，不激烈，不喧宾夺主。
+- 季节区分明显：
+  - 春：明亮、轻快、有生机。
+  - 夏：温暖、稍活泼、有阳光感。
+  - 秋：柔和、略带怀旧。
+  - 冬：安静、清冷、有空间感。
+- 矿洞：低沉、稀疏、带一点神秘，不恐怖。
+- 夜晚：安静、缓慢、音量略低。
+- 节日：热闹但不吵，可加打击乐和管乐。
+
+### 6.7 BGM 切换规则
+
+- 切场景用淡出旧曲、淡入新曲，默认 0.8 秒。
+- 同一首 BGM 不重复从头播放。
+- 换季节时切对应季节 BGM。
+- 进出矿洞时切矿洞 BGM。
+- 节日当天优先节日 BGM。
+- 夜晚 20:00 后可切夜晚 BGM 或降低当前 BGM 音量。
+- 对话、菜单、钓鱼小游戏不切 BGM，只降低音量或保持。
+
+### 6.8 BGM 音量与混音
+
+- BGM 默认音量 0.8 左右，低于 SFX。
+- BGM 走独立 `BGM` 总线。
+- 对话时 BGM 自动降低 3~6 dB（ducking），对话结束恢复。
+- 矿洞、夜晚 BGM 整体音量可再低一点。
+- 玩家可在设置里单独调 BGM 音量。
+
+### 6.9 BGM 命名与存放
+
+目录：
+
+```text
+res://audio/bgm/
+├── bgm_spring.ogg
+├── bgm_summer.ogg
+├── bgm_autumn.ogg
+├── bgm_winter.ogg
+├── bgm_town.ogg
+├── bgm_mine.ogg
+├── bgm_night.ogg
+├── bgm_festival.ogg
+└── bgm_indoor.ogg
+```
+
+命名规则：
+
+- 全小写，下划线分隔。
+- 格式：`bgm_场景名.ogg`。
+- 变奏加后缀：`bgm_spring_night.ogg`。
+- 不要用中文文件名和空格。
+
+### 6.10 BGM 来源与授权
+
+- 每首 BGM 记入 `assets/CREDITS.md`。
+- 记录：曲名、作者、来源链接、授权类型、是否需署名。
+- CC0 可直接用。
+- CC BY 必须署名，游戏内加制作人员界面。
+- AI 生成的 BGM 也记录工具和生成日期。
+- 不要用来源不明的 BGM。
+
+`assets/CREDITS.md` 示例：
+
+```markdown
+# 素材来源与授权
+
+## BGM
+| 曲名 | 作者 | 来源 | 授权 | 需署名 |
+|---|---|---|---|---|
+| Spring Theme | xxx | 链接 | CC0 | 否 |
+| Mine Ambience | xxx | 链接 | CC BY 4.0 | 是 |
+| Winter Theme | AI 生成 | Suno | 商业授权 | 否 |
+
+## SFX
+| 音效包 | 作者 | 来源 | 授权 | 需署名 |
+|---|---|---|---|---|
+| Kenney UI Audio | Kenney | 链接 | CC0 | 否 |
+
+## 字体
+| 字体 | 作者 | 来源 | 授权 |
+|---|---|---|---|
+| xxx | xxx | 链接 | 可商用 |
+```
+
+### 6.11 BGM 与时间系统的联动
+
+| 时间/状态 | BGM 行为 |
+|---|---|
+| 6:00 换日 | 保持当前季节 BGM，不重启 |
+| 换季 | 淡出旧季节 BGM，淡入新季节 BGM |
+| 20:00 后 | 可切夜晚 BGM 或降低音量 |
+| 进矿洞 | 切矿洞 BGM |
+| 出矿洞 | 恢复户外 BGM |
+| 节日 | 优先节日 BGM |
+| 对话 | BGM 降低，不切歌 |
+| 睡觉 | 淡出 BGM，黑屏 |
+| 读档 | 按当前场景播放对应 BGM |
+
+### 6.12 BGM 检查项
+
+- 每个季节都有 BGM。
+- 矿洞、小镇、节日有独立 BGM。
+- BGM 能无缝循环，无爆音。
+- 切歌有淡入淡出，不突兀。
+- 同一 BGM 不重复从头播放。
+- BGM 响度一致，切歌不炸耳。
+- BGM 和 SFX 音量能分开调。
+- 每首 BGM 有来源和授权记录。
+- 新增 BGM 只需在 `AudioManager` 登记键名。
+
+### 6.13 SFX 来源
+
+| 网站 / 资源包 | 类型 | 授权 | 提醒 |
+|---|---|---|---|
+| Kenney Audio Packs | 界面、跳跃、爆炸、脚步 | CC0 | 首选，成套下载，无需署名 |
+| Sonniss GDC Bundle | 专业级、高品质 | 免版税（无需署名） | 每年 GDC 发布超大合集，可无限次商用 |
+| Freesound | 环境声、脚步、风声 | 混合 | 用筛选器只显示 CC0，或逐个看 License |
+| Unity / Unreal 商店 | 成套音频 | 混合 | 同样看清每个包授权 |
+
+### 6.14 让 AI 自动找音频
+
+不想自己翻网站，可以让 AI 通过 **MCP（模型上下文协议）工具**自动完成“搜索 → 查授权 → 下载”。
+
+| 工具 | 作用 |
+|---|---|
+| `threenative-asset-mcp` | 聚合 Sonniss、Kenney、Pixabay、Freesound、OpenGameArt 等 10 个来源，只收录授权清晰、有官方下载链接的素材 |
+| `sfx-mcp` | 封装 Freesound API，只搜 CC0 音效，支持搜索、下载、打标签、本地缓存 |
+| `pixabay-audio` | 搜索并下载 Pixabay BGM 和 SFX，自动生成 `audio_manifest.json` |
+| `free-resource` | 聚合 Pixabay、Freesound、Jamendo（Jamendo 是重要 BGM 来源） |
+
+使用前提：
+
+- 需要去对应平台申请免费 API Key（如 Freesound）。
+- 配置在环境变量或 `.env`。
+- AI 负责跑腿，钥匙需要你给一次。
+
+### 6.15 让 AI 直接生成音乐
+
+| 工具 | 商业授权 | 适合游戏的点 | 成本参考 |
+|---|---|---|---|
+| Suno | Pro 计划明确允许用于电子游戏，可永久商用 | 完整歌曲和器乐 BGM，风格覆盖面广 | 约 $10/月 |
+| Beatoven.ai | 付费计划提供非独占、永久、免版税同步许可，覆盖游戏 | 专为视频/播客/游戏 BGM 设计，可免费试用 | 约 $10/月 |
+| Udio | 当前没有任何计划允许商业使用 | 仅个人非商业用途 | 不建议作为公开项目依赖 |
+
+建议：
+
+- 想彻底让 AI 搞定，选 Suno Pro 或 Beatoven.ai 付费计划。
+- 给 AI 描述，如“cozy farming game BGM, acoustic guitar, warm, looping, 2 minutes”。
+- 导出 WAV/OGG，授权清晰，不用再操心来源。
+
+### 6.16 总线结构
+
+```text
+Master
+├── BGM
+├── SFX
+├── UI
+└── Ambient
+```
+
+### 6.17 音量设置
+
+```gdscript
+# AudioManager.gd
+func set_bus_volume(bus_name: String, linear: float) -> void:
+    var idx = AudioServer.get_bus_index(bus_name)
+    if idx < 0:
+        return
+    var db = linear_to_db(clamp(linear, 0.0, 1.0))
+    AudioServer.set_bus_volume_db(idx, db)
+
+func get_bus_volume(bus_name: String) -> float:
+    var idx = AudioServer.get_bus_index(bus_name)
+    if idx < 0:
+        return 0.0
+    return db_to_linear(AudioServer.get_bus_volume_db(idx))
+```
+
+### 6.18 设置持久化
+
+独立设置文件 `settings.json`，和存档分开：
+
+```json
+{
+  "bgm_volume": 0.8,
+  "sfx_volume": 1.0,
+  "ui_volume": 0.8,
+  "ambient_volume": 0.6,
+  "master_volume": 1.0,
+  "time_speed": "normal",
+  "window_mode": "windowed"
+}
+```
+
+### 6.19 BGM 切换代码
+
+```gdscript
+func play_bgm(stream: AudioStream, fade_time := 0.8) -> void:
+    if current_bgm == stream:
+        return
+    var tween = create_tween()
+    tween.tween_property(bgm_player, "volume_db", -40.0, fade_time)
+    tween.tween_callback(func():
+        bgm_player.stream = stream
+        bgm_player.play()
+    )
+    tween.tween_property(bgm_player, "volume_db", 0.0, fade_time)
+    current_bgm = stream
+```
+
+### 6.20 SFX 管理
+
+- 常用音效预加载，避免卡顿。
+- 同一音效短时间重复时限制频率。
+- UI 音效走 UI 总线，不受 BGM 影响。
+
+### 6.21 音频目录建议
+
+```text
+res://audio/
+├── bgm/
+│   ├── bgm_spring.ogg
+│   ├── bgm_summer.ogg
+│   ├── bgm_autumn.ogg
+│   ├── bgm_winter.ogg
+│   ├── bgm_town.ogg
+│   ├── bgm_mine.ogg
+│   ├── bgm_night.ogg
+│   ├── bgm_festival.ogg
+│   └── bgm_indoor.ogg
+├── sfx/
+│   ├── ui/
+│   ├── footsteps/
+│   ├── tools/
+│   ├── animals/
+│   └── nature/
+└── ambient/
+    ├── rain.ogg
+    └── wind.ogg
+```
+
+### 6.22 音频检查项
+
+- 每个音频有来源记录。
+- 需要署名的素材，游戏内有制作人员界面。
+- BGM / SFX 能分开调。
+- 调完重启游戏设置还在。
+- 切场景 BGM 有淡入淡出。
+- 同一 BGM 不重复播放。
+- 音效不卡顿。
+- 新增音频只需在 `AudioManager` 登记键名，不改播放逻辑。
+
+---
+
+## 七、操作顺手
+
+### 7.1 目标
+
+- 键位不冲突。
+- 交互提示清晰。
+- 连按不丢输入。
+- 键位能改更好。
+
+### 7.2 默认键位
+
+| 功能 | 键鼠 | 手柄（可选） |
+|---|---|---|
+| 移动 | WASD / 方向键 | 左摇杆 |
+| 确认 / 交互 | E / 回车 | A |
+| 取消 / 菜单 | Esc | B |
+| 使用工具 | 空格 / 鼠标左键 | X |
+| 切换工具 | Q / Tab | LB / RB |
+| 打开背包 | I | Y |
+| 跑步 | Shift | RT |
+| 钓鱼 | 空格 | X |
+
+### 7.3 输入映射
+
+Godot Input Map 里统一配置：
+
+- `move_up` / `move_down` / `move_left` / `move_right`
+- `interact`
+- `cancel`
+- `use_tool`
+- `switch_tool`
+- `open_inventory`
+- `run`
+- `debug_panel`
+
+代码里只用 action 名，不直接读按键。
+
+### 7.4 交互提示
+
+- 玩家进入可交互范围，显示按键图标。
+- 图标浮在可交互物上方。
+- 多个可交互物重叠时，优先最近的。
+- 图标用统一素材，和 UI 风格一致。
+
+### 7.5 输入缓冲
+
+```gdscript
+var input_buffer := 0.0
+const BUFFER_TIME := 0.15
+
+func _process(delta):
+    if input_buffer > 0:
+        input_buffer -= delta
+
+func _unhandled_input(event):
+    if event.is_action_pressed("use_tool"):
+        input_buffer = BUFFER_TIME
+
+func _physics_process(delta):
+    if can_use_tool() and input_buffer > 0:
+        use_tool()
+        input_buffer = 0
+```
+
+### 7.6 键位冲突检查
+
+- 同一按键不要绑两个动作。
+- 工具键和跑步键不冲突。
+- 菜单键在对话中也能关闭对话。
+
+### 7.7 检查项
+
+- 所有功能都有键位。
+- 键位无冲突。
+- 交互提示能显示。
+- 连按工具不丢输入。
+- 对话中能正常取消。
+- 跑步不误触工具。
+
+---
+
+## 八、简单的测试习惯
+
+### 8.1 目标
+
+- 不做正式测试文档。
+- 每次改完顺手检查关键路径。
+- 改崩能快速定位。
+
+### 8.2 每次改完检查
+
+**时间**
+
+- 跨午夜不换日。
+- 2:00 强制晕倒。
+- 换季作物枯萎。
+- 节日商店关门。
+
+**存档**
+
+- 存读档数据一致。
+- 旧档能读。
+- 坏档能回退。
+
+**经济**
+
+- 新作物能种、能收、能卖。
+- 新动物能买、能喂、能产。
+- 新加工品能加工、能卖。
+
+**交互**
+
+- 新物品能拾取、能进背包。
+- 新工具能使用。
+- 新 NPC 能对话、能送礼。
+
+**音频**
+
+- 新 BGM 能播、能淡入淡出、能循环。
+- 新音效不卡顿。
+- 音量设置能保存。
+- 切季节、进矿洞、进节日 BGM 正确。
+
+**UI**
+
+- 新物品图标显示正常。
+- 新面板能打开、能关闭。
+- 新按钮能点击。
+
+### 8.3 边界用例
+
+| 场景 | 检查 |
+|---|---|
+| 背包满时拾取 | 提示“背包已满”，物品不掉 |
+| 体力为 0 时干活 | 提示“太累了”，不执行 |
+| 金钱不足时购买 | 提示“钱不够”，不扣钱 |
+| 矿洞 2:00 | 出洞后晕倒 |
+| 节日当天进商店 | 门关着，提示“今天休息” |
+| 换季当天睡觉 | 作物按新季节判定 |
+| 稀有物品入图鉴 | 图鉴条目解锁 |
+| 动物死亡 | 列表移除，墓碑出现 |
+
+### 8.4 回归检查
+
+每次大改后重跑：
+
+- 新游戏开局 → 第一天完整流程。
+- 存档 → 退出 → 读档 → 状态一致。
+- 换季 → 作物、动物、天气、BGM 正确。
+- 节日 → 场景、NPC、商店、BGM 正确。
+
+### 8.5 快速自检脚本（可选）
+
+```gdscript
+# debug/self_check.gd
+func run_self_check() -> void:
+    assert(SaveSystem.get_empty_save().has("save_version"))
+    assert(ConfigLoader.load_json("res://config/crops.json") != null)
+    assert(ConfigLoader.load_json("res://config/fruit_trees.json") != null)
+    assert(ConfigLoader.load_json("res://config/fishing_tools.json") != null)
+    print("自检通过")
+```
+
+### 8.6 检查项
+
+- 每次改完关键路径能跑。
+- 边界用例有覆盖。
+- 大改后有回归。
+- 自检脚本能跑通。
+
+---
+
+## 九、场景节点架构统一
+
+### 9.1 目标
+
+- 玩家、NPC、动物共用组件。
+- 单例职责清晰。
+- 信号命名统一。
+- Y-sort 层级一致。
+
+### 9.2 全局单例
+
+| 单例 | 职责 | 不放什么 |
+|---|---|---|
+| `GameState` | 玩家数据、金钱、背包 | 不放 UI 逻辑 |
+| `TimeSystem` | 时间、季节、天气 | 不放存档逻辑 |
+| `SaveSystem` | 存读档、迁移 | 不放游戏逻辑 |
+| `AudioManager` | BGM / SFX / 音量设置 | 不放场景切换 |
+| `ConfigLoader` | 读 JSON、校验 | 不放玩法逻辑 |
+| `EventBus` | 跨系统信号 | 不放状态 |
+
+### 9.3 节点结构模板
+
+**玩家**
+
+```text
+Player (CharacterBody2D)
+├── Sprite (AnimatedSprite2D)
+├── Collision (CollisionShape2D)
+├── InteractionArea (Area2D)
+├── ToolAnchor (Node2D)
+└── DirectionalAnimator (Node)
+```
+
+**NPC**
+
+```text
+NPC (CharacterBody2D)
+├── Sprite (AnimatedSprite2D)
+├── Collision (CollisionShape2D)
+├── InteractionArea (Area2D)
+├── Schedule (Node)
+└── DirectionalAnimator (Node)
+```
+
+**动物**
+
+```text
+Animal (CharacterBody2D)
+├── Sprite (AnimatedSprite2D)
+├── Collision (CollisionShape2D)
+├── InteractionArea (Area2D)
+├── AI (Node)
+└── DirectionalAnimator (Node)
+```
+
+**作物**
+
+```text
+Crop (Node2D)
+├── Sprite (Sprite2D)
+├── Shadow (Sprite2D)
+└── RipeIndicator (Sprite2D)
+```
+
+**果树**
+
+```text
+FruitTree (Node2D)
+├── Sprite (Sprite2D)
+├── Shadow (Sprite2D)
+├── FruitAnchor (Node2D)
+└── ShakeArea (Area2D)
+```
+
+### 9.4 组件化
+
+- `DirectionalAnimator`：4 方向动画，玩家、NPC、动物共用。
+- `InteractionArea`：交互检测，显示按键提示。
+- `HealthComponent`：体力、生命。
+- `InventoryComponent`：背包，玩家和箱子共用。
+- `AudioManager`：统一播放 BGM / SFX，按键名取音频。
+
+### 9.5 Y-sort 层级
+
+| 层 | 内容 | Y-sort |
+|---|---|---|
+| Ground | 地面、路面、水面 | 否 |
+| Farmland | 耕地、浇水状态 | 否 |
+| Decor | 花、石子、栅栏底座 | 是 |
+| Objects | 作物、果树、建筑 | 是 |
+| Characters | 玩家、NPC、动物 | 是 |
+| Overlay | 树冠、屋檐 | 是 |
+| UI | 界面 | 否 |
+
+规则：
+
+- 按脚底 Y 排序。
+- 地面层不参与 Y-sort。
+- 遮挡层在角色上方。
+
+### 9.6 信号命名
+
+格式：`动词_对象` 或 `对象_状态变化`。
+
+示例：
+
+- `crop_harvested`
+- `animal_fed`
+- `day_changed`
+- `season_changed`
+- `item_picked`
+- `tool_used`
+- `npc_talked`
+- `bgm_changed`
+
+规则：
+
+- 信号只传必要参数。
+- 跨系统通信用 `EventBus`。
+- 同系统内部直接连信号。
+
+### 9.7 检查项
+
+- 玩家、NPC、动物共用朝向组件。
+- 单例职责清晰，没有互相引用成环。
+- 信号命名统一。
+- Y-sort 层级一致。
+- 新加角色不用重复写朝向逻辑。
+- 新增音频只登记键名，不改播放逻辑。
+
+---
+
+## 十、最小清单与开发习惯
+
+### 10.1 最小清单
+
+如果只记 6 条：
+
+1. 存档带版本号 + 读档失败回退。
+2. 用 Git，每天 commit。
+3. 数值放 JSON。
+4. 做一个作弊面板。
+5. 字体和音频授权确认，记进 `CREDITS.md`。
+6. 操作键位定一套。
+
+### 10.2 开发习惯
+
+- 每天开始前：确认工作区干净。
+- 每天结束前：commit + 写一行 CHANGELOG。
+- 大改前：打 tag 或建分支。
+- 加新系统前：先想存档字段，再写代码。
+- 改配置前：确认不影响已存档 ID。
+- 加外部素材前：先记来源和授权。
+- 想“先随便写写”时：先放进配置或单例。
+
+### 10.3 避坑要点
+
+- 不要直接覆盖存档文件。
+- 不要省略存档版本号。
+- 不要改已进存档的配置 ID。
+- 不要把数值写死在脚本里。
+- 不要用来源不明的字体和音乐。
+- 不要忘记把需要署名的素材写进制作人员界面。
+- 不要在正式构建里留作弊面板。
+- 不要让玩家、NPC、动物各写一套朝向逻辑。
+- 不要用 MP3 做 BGM 循环。
+- 不要等“做完再优化”，先保证能跑、能存、能改。

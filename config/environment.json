@@ -1,0 +1,120 @@
+{
+  "days_per_season": 30,
+  "seasons": [
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+  ],
+  "day_cycle": {
+    "start_time": "06:00",
+    "end_time": "06:00",
+    "end_is_next_day": true,
+    "start_minutes": 360,
+    "total_game_minutes": 1440,
+    "real_seconds_per_game_minute": 0.7,
+    "theoretical_real_minutes_per_day": 16.8,
+    "speed_presets": {
+      "slow": 1.0,
+      "normal": 0.7,
+      "fast": 0.5
+    },
+    "pause_during": [
+      "inventory",
+      "dialogue",
+      "fishing_minigame",
+      "cutscene",
+      "menu",
+      "mining",
+      "shop"
+    ],
+    "indoor_time_stopped_locations": [
+      "house",
+      "coop",
+      "barn",
+      "shop",
+      "mine",
+      "hot_spring"
+    ]
+  },
+  "sleep_rules": {
+    "wake_time": "06:00",
+    "late_sleep_after": "24:00",
+    "late_sleep_stamina_ratio": 0.7,
+    "very_late_sleep_after": "02:00",
+    "very_late_sleep_stamina_ratio": 0.4,
+    "collapse_on_exhaustion": true,
+    "collapse_on_late_night": false,
+    "delayed_wake_on_collapse": true,
+    "collapse_wake_time": "08:00",
+    "collapse_stamina_ratio": 0.5,
+    "collapses_at_home": true,
+    "collapse_money_penalty": 0,
+    "collapse_item_loss_chance": 0.0
+  },
+  "time_of_day_windows": {
+    "dawn": [
+      "06:00",
+      "08:00"
+    ],
+    "day": [
+      "08:00",
+      "16:00"
+    ],
+    "dusk": [
+      "16:00",
+      "18:00"
+    ],
+    "night": [
+      "18:00",
+      "06:00"
+    ]
+  },
+  "shop_hours": {
+    "general_store": {
+      "open": "09:00",
+      "close": "17:00",
+      "name": "杂货铺"
+    }
+  },
+  "banners": {
+    "day_banner_seconds": 1.5,
+    "season_banner_seconds": 2.0
+  },
+  "fatigue_warning_ratio": 0.2,
+  "machine_processing": {
+    "runs_during_night": true,
+    "night_start": "02:00",
+    "night_end": "06:00"
+  },
+  "weather_weights": {
+    "spring": {
+      "sunny": 55,
+      "rain": 30,
+      "storm": 15,
+      "snow": 0,
+      "blizzard": 0
+    },
+    "summer": {
+      "sunny": 60,
+      "rain": 20,
+      "storm": 20,
+      "snow": 0,
+      "blizzard": 0
+    },
+    "autumn": {
+      "sunny": 50,
+      "rain": 30,
+      "storm": 20,
+      "snow": 0,
+      "blizzard": 0
+    },
+    "winter": {
+      "sunny": 35,
+      "rain": 5,
+      "storm": 10,
+      "snow": 35,
+      "blizzard": 15
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "rods": [
+    {
+      "id": "normal_rod",
+      "name": "普通鱼竿",
+      "price": 500,
+      "tier": 0,
+      "counts_as_high_rod": false
+    },
+    {
+      "id": "copper_rod",
+      "name": "铜鱼竿",
+      "upgrade_from": "normal_rod",
+      "upgrade_cost": 1000,
+      "upgrade_materials": { "copper": 5 },
+      "tier": 1,
+      "counts_as_high_rod": false
+    },
+    {
+      "id": "silver_rod",
+      "name": "银鱼竿",
+      "upgrade_from": "copper_rod",
+      "upgrade_cost": 2500,
+      "upgrade_materials": { "silver": 5 },
+      "tier": 2,
+      "counts_as_high_rod": false
+    },
+    {
+      "id": "gold_rod",
+      "name": "金鱼竿",
+      "upgrade_from": "silver_rod",
+      "upgrade_cost": 6000,
+      "upgrade_materials": { "gold": 5 },
+      "tier": 3,
+      "counts_as_high_rod": true
+    },
+    {
+      "id": "mythril_rod",
+      "name": "秘银鱼竿",
+      "upgrade_from": "gold_rod",
+      "upgrade_cost": 12000,
+      "upgrade_materials": { "mythril": 5 },
+      "tier": 4,
+      "counts_as_high_rod": true
+    }
+  ],
+  "crab_pots": [
+    {
+      "id": "normal_crab_pot",
+      "name": "普通蟹笼",
+      "price": 300,
+      "outputs": [
+        { "id": "river_crab", "name": "河蟹" },
+        { "id": "small_shrimp", "name": "小虾米" },
+        { "id": "clam", "name": "花蛤" }
+      ]
+    },
+    {
+      "id": "enhanced_crab_pot",
+      "name": "强化蟹笼",
+      "price": 800,
+      "outputs": [
+        { "id": "lake_crab", "name": "湖蟹" },
+        { "id": "sea_shrimp", "name": "海虾" },
+        { "id": "scallop", "name": "扇贝" }
+      ]
+    },
+    {
+      "id": "deepsea_crab_pot",
+      "name": "深海蟹笼",
+      "price": 2000,
+      "outputs": [
+        { "id": "mitten_crab", "name": "大闸蟹" },
+        { "id": "lobster", "name": "龙虾" },
+        { "id": "abalone", "name": "鲍鱼" }
+      ]
+    }
+  ],
+  "baits": [
+    {
+      "id": "normal_bait",
+      "name": "普通鱼饵",
+      "price": 10,
+      "effects": { "bite_speed_bonus": 0.2 }
+    },
+    {
+      "id": "insect_bait",
+      "name": "昆虫鱼饵",
+      "price": 20,
+      "effects": { "attract_tag": "freshwater" }
+    },
+    {
+      "id": "shrimp_bait",
+      "name": "虾肉鱼饵",
+      "price": 30,
+      "effects": { "attract_tag": "saltwater" }
+    },
+    {
+      "id": "high_bait",
+      "name": "高级鱼饵",
+      "price": 50,
+      "effects": { "rare_bonus": 0.05 }
+    },
+    {
+      "id": "mystery_bait",
+      "name": "神秘鱼饵",
+      "price": 100,
+      "effects": { "attract_tag": "rare_or_giant" }
+    }
+  ],
+  "tackles": [
+    {
+      "id": "normal_float",
+      "name": "普通浮漂",
+      "price": 100,
+      "effects": { "bite_indicator": "clear" }
+    },
+    {
+      "id": "glow_float",
+      "name": "发光浮漂",
+      "price": 300,
+      "effects": { "night_no_penalty": true }
+    },
+    {
+      "id": "strong_line",
+      "name": "强力鱼线",
+      "price": 500,
+      "effects": { "minigame_difficulty_delta": -0.2 }
+    },
+    {
+      "id": "anti_escape_hook",
+      "name": "防脱鱼钩",
+      "price": 800,
+      "effects": { "escape_reduction": 0.3 }
+    },
+    {
+      "id": "auto_reel",
+      "name": "自动收线器",
+      "price": 2000,
+      "effects": { "minigame_auto_progress": 0.5 }
+    }
+  ],
+  "global_limits": {
+    "crab_pot_initial_limit": 2,
+    "crab_pot_max_limit": 8
+  }
+}

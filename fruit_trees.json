@@ -1,0 +1,121 @@
+{
+  "global_rules": {
+    "water_required": false,
+    "needs_3x3_space": true,
+    "repeat_yearly": true,
+    "chopable": true,
+    "rare_chance": 0.05,
+    "rare_type": "giant_fruit",
+    "rare_price_multiplier": 1.5
+  },
+  "trees": [
+    {
+      "id": "apple_tree",
+      "name": "苹果树",
+      "fruit_id": "apple",
+      "fruit_name": "苹果",
+      "season": "autumn",
+      "mature_year": 4,
+      "base_price": 60
+    },
+    {
+      "id": "orange_tree",
+      "name": "橘子树",
+      "fruit_id": "orange",
+      "fruit_name": "橘子",
+      "season": "winter",
+      "mature_year": 4,
+      "base_price": 70
+    },
+    {
+      "id": "peach_tree",
+      "name": "桃树",
+      "fruit_id": "peach",
+      "fruit_name": "桃子",
+      "season": "summer",
+      "mature_year": 4,
+      "base_price": 80
+    },
+    {
+      "id": "pear_tree",
+      "name": "梨树",
+      "fruit_id": "pear",
+      "fruit_name": "梨子",
+      "season": "autumn",
+      "mature_year": 5,
+      "base_price": 75
+    },
+    {
+      "id": "cherry_tree",
+      "name": "樱桃树",
+      "fruit_id": "cherry",
+      "fruit_name": "樱桃",
+      "season": "spring",
+      "mature_year": 5,
+      "base_price": 120
+    },
+    {
+      "id": "banana_tree",
+      "name": "香蕉树",
+      "fruit_id": "banana",
+      "fruit_name": "香蕉",
+      "season": "summer",
+      "mature_year": 5,
+      "base_price": 90
+    },
+    {
+      "id": "coconut_tree",
+      "name": "椰子树",
+      "fruit_id": "coconut",
+      "fruit_name": "椰子",
+      "season": "summer",
+      "mature_year": 6,
+      "base_price": 100
+    },
+    {
+      "id": "grape_tree",
+      "name": "葡萄藤",
+      "fruit_id": "tree_grape",
+      "fruit_name": "葡萄",
+      "season": "autumn",
+      "mature_year": 3,
+      "base_price": 80
+    },
+    {
+      "id": "fig_tree",
+      "name": "无花果树",
+      "fruit_id": "fig",
+      "fruit_name": "无花果",
+      "season": "summer",
+      "mature_year": 4,
+      "base_price": 95
+    },
+    {
+      "id": "persimmon_tree",
+      "name": "柿子树",
+      "fruit_id": "persimmon",
+      "fruit_name": "柿子",
+      "season": "autumn",
+      "mature_year": 5,
+      "base_price": 70
+    },
+    {
+      "id": "pomegranate_tree",
+      "name": "石榴树",
+      "fruit_id": "pomegranate",
+      "fruit_name": "石榴",
+      "season": "autumn",
+      "mature_year": 5,
+      "base_price": 110
+    },
+    {
+      "id": "lemon_tree",
+      "name": "柠檬树",
+      "fruit_id": "lemon",
+      "fruit_name": "柠檬",
+      "season": "winter",
+      "mature_year": 4,
+      "base_price": 85
+    }
+  ]
+}

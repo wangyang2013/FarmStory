@@ -1,0 +1,90 @@
+{
+  "hive": {
+    "price": 800,
+    "wood_cost": 10,
+    "queen_price": 300,
+    "sugar_water_price": 50,
+    "medicine_price": 150,
+    "harvest_interval_days": 3,
+    "forest_farm_discount": 0.2
+  },
+  "flower_bonus": {
+    "search_radius": 2,
+    "efficiency_per_flower_type": 0.05,
+    "max_flower_types": 8
+  },
+  "rare_honey": {
+    "base_chance": 0.05,
+    "forest_farm_bonus": 0.02,
+    "many_flower_bonus": 0.01,
+    "many_flower_threshold": 5,
+    "types": ["forest_honey", "wildflower_honey", "crystal_honey"]
+  },
+  "products": [
+    {
+      "id": "honey",
+      "name": "蜂蜜",
+      "category": "bee_product",
+      "type": "normal",
+      "source": "蜂箱",
+      "quality_levels": ["normal", "silver", "gold", "star"],
+      "uses": ["cooking", "honey_bottle", "selling", "gift"],
+      "recipes": ["honey_cake", "honey_water", "honey_bottle"],
+      "unlock_book_category": "bee_product"
+    },
+    {
+      "id": "beeswax",
+      "name": "蜂蜡",
+      "category": "bee_product",
+      "type": "normal",
+      "source": "蜂箱额外产出",
+      "uses": ["crafting", "gift", "decoration"],
+      "unlock_book_category": "bee_product"
+    },
+    {
+      "id": "royal_jelly",
+      "name": "蜂王浆",
+      "category": "bee_product",
+      "type": "rare",
+      "source": "高健康蜂群稀有产出",
+      "uses": ["selling", "gift"],
+      "unlock_book_category": "bee_product"
+    },
+    {
+      "id": "bee_pollen",
+      "name": "蜂花粉",
+      "category": "bee_product",
+      "type": "normal",
+      "source": "花源丰富时产出",
+      "uses": ["bait_material", "gift"],
+      "unlock_book_category": "bee_product"
+    },
+    {
+      "id": "forest_honey",
+      "name": "森林蜜",
+      "category": "bee_product",
+      "type": "rare_honey",
+      "source": "稀有蜂蜜",
+      "uses": ["selling", "gift", "unlock_book"],
+      "unlock_book_category": "bee_product"
+    },
+    {
+      "id": "wildflower_honey",
+      "name": "百花蜜",
+      "category": "bee_product",
+      "type": "rare_honey",
+      "source": "稀有蜂蜜",
+      "uses": ["selling", "gift", "unlock_book"],
+      "unlock_book_category": "bee_product"
+    },
+    {
+      "id": "crystal_honey",
+      "name": "结晶蜜",
+      "category": "bee_product",
+      "type": "rare_honey",
+      "source": "极稀有蜂蜜",
+      "uses": ["unlock_book", "festival_prize"],
+      "unlock_book_category": "bee_product"
+    }
+  ]
+}

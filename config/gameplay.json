@@ -1,0 +1,83 @@
+{
+  "player": {
+    "speed": 80.0,
+    "interact_reach_tiles": 2.0,
+    "stamina_max": 100.0,
+    "start_stamina": 100.0,
+    "run_multiplier": 1.75
+  },
+  "stamina_costs": {
+    "till": 2,
+    "plant": 1,
+    "water": 1,
+    "fertilize": 1,
+    "harvest": 1,
+    "clear": 1,
+    "fish": 2
+  },
+  "inventory": {
+    "max_slots": 24,
+    "max_stack": 99,
+    "hotbar_slots": 10
+  },
+  "shipping_bin": {
+    "sell_multiplier": 1.0
+  },
+  "shop": {
+    "buy_quantity_step": 1,
+    "shift_quantity": 5
+  },
+  "tool_items": {
+    "hoe": {
+      "name": "锄头",
+      "action": "till"
+    },
+    "can": {
+      "name": "浇水壶",
+      "action": "water"
+    }
+  },
+  "start_items": [
+    {
+      "item_id": "hoe",
+      "category": "tool",
+      "count": 1
+    },
+    {
+      "item_id": "can",
+      "category": "tool",
+      "count": 1
+    },
+    {
+      "item_id": "normal_rod",
+      "category": "rod",
+      "count": 1
+    },
+    {
+      "item_id": "turnip",
+      "category": "seed",
+      "count": 5
+    },
+    {
+      "item_id": "sword",
+      "category": "weapon",
+      "count": 1
+    }
+  ],
+  "animals": {
+    "feed_item_id": "feed",
+    "feed_name": "饲料",
+    "feed_price": 20,
+    "max_per_building": 4,
+    "friendship_max": 100,
+    "friendship_start": 30,
+    "friendship_per_pet": 5,
+    "friendship_per_feed": 1,
+    "friendship_decay_no_feed": 4,
+    "produce_friendship_min": 0,
+    "breeding_chance": 0.35,
+    "breeding_friendship_min": 50,
+    "purchased_age_days": 30,
+    "baby_friendship": 20
+  }
+}

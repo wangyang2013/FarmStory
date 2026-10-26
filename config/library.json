@@ -1,0 +1,26 @@
+[
+  {
+    "id": "farming_book",
+    "name": "《作物栽培入门》",
+    "desc": "介绍了春季作物的种植与浇水要点。",
+    "items": [
+      { "item_id": "turnip", "category": "seed", "count": 5 },
+      { "item_id": "potato", "category": "seed", "count": 5 }
+    ],
+    "money": 0
+  },
+  {
+    "id": "fishing_book",
+    "name": "《河畔钓鱼笔记》",
+    "desc": "记录着鱼群出没的时段与天气。",
+    "items": [],
+    "money": 200
+  },
+  {
+    "id": "history_book",
+    "name": "《小镇旧事》",
+    "desc": "讲述小镇与博物馆的往事，读来令人安心。",
+    "items": [],
+    "money": 100
+  }
+]

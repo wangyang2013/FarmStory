@@ -1,0 +1,302 @@
+[
+  {
+    "id": "chicken",
+    "name": "普通鸡",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "egg",
+    "product_name": "鸡蛋",
+    "can_rare_color": true,
+    "buy_price": 500
+  },
+  {
+    "id": "silkie",
+    "name": "乌骨鸡",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "silkie_egg",
+    "product_name": "乌鸡蛋",
+    "can_rare_color": true,
+    "buy_price": 800
+  },
+  {
+    "id": "duck",
+    "name": "家鸭",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "duck_egg",
+    "product_name": "鸭蛋",
+    "can_rare_color": true,
+    "buy_price": 700
+  },
+  {
+    "id": "mandarin_duck",
+    "name": "鸳鸯鸭",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "mandarin_egg",
+    "product_name": "鸳鸯蛋",
+    "can_rare_color": true,
+    "buy_price": 1200
+  },
+  {
+    "id": "goose",
+    "name": "家鹅",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "goose_egg",
+    "product_name": "鹅蛋",
+    "can_rare_color": true,
+    "buy_price": 1000
+  },
+  {
+    "id": "quail",
+    "name": "鹌鹑",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "quail_egg",
+    "product_name": "鹌鹑蛋",
+    "can_rare_color": true,
+    "buy_price": 600
+  },
+  {
+    "id": "guinea_fowl",
+    "name": "珍珠鸡",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "guinea_egg",
+    "product_name": "珍珠蛋",
+    "can_rare_color": true,
+    "buy_price": 1100
+  },
+  {
+    "id": "turkey",
+    "name": "火鸡",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "turkey_egg",
+    "product_name": "火鸡蛋",
+    "can_rare_color": true,
+    "buy_price": 1500
+  },
+  {
+    "id": "muscovy_duck",
+    "name": "番鸭",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "muscovy_egg",
+    "product_name": "番鸭蛋",
+    "can_rare_color": true,
+    "buy_price": 900
+  },
+  {
+    "id": "partridge",
+    "name": "鹧鸪",
+    "category": "poultry",
+    "barn_type": "coop",
+    "product_id": "partridge_egg",
+    "product_name": "鹧鸪蛋",
+    "can_rare_color": true,
+    "buy_price": 650
+  },
+  {
+    "id": "cow",
+    "name": "奶牛",
+    "category": "livestock",
+    "barn_type": "barn",
+    "product_id": "milk",
+    "product_name": "牛奶",
+    "can_rare_color": true,
+    "buy_price": 4000
+  },
+  {
+    "id": "buffalo",
+    "name": "水牛",
+    "category": "livestock",
+    "barn_type": "barn",
+    "product_id": "buffalo_milk",
+    "product_name": "水牛奶",
+    "can_rare_color": true,
+    "buy_price": 6000
+  },
+  {
+    "id": "sheep",
+    "name": "绵羊",
+    "category": "livestock",
+    "barn_type": "barn",
+    "product_id": "wool",
+    "product_name": "羊毛",
+    "can_rare_color": true,
+    "buy_price": 3500
+  },
+  {
+    "id": "goat",
+    "name": "山羊",
+    "category": "livestock",
+    "barn_type": "barn",
+    "product_id": "goat_milk",
+    "product_name": "羊奶",
+    "can_rare_color": true,
+    "buy_price": 3000
+  },
+  {
+    "id": "black_pig",
+    "name": "黑猪",
+    "category": "livestock",
+    "barn_type": "sty",
+    "product_id": "pork",
+    "product_name": "猪肉",
+    "can_rare_color": true,
+    "buy_price": 3000
+  },
+  {
+    "id": "miniature_pig",
+    "name": "香猪",
+    "category": "livestock",
+    "barn_type": "sty",
+    "product_id": "mini_pork",
+    "product_name": "香猪肉",
+    "can_rare_color": true,
+    "buy_price": 5000
+  },
+  {
+    "id": "rabbit",
+    "name": "家兔",
+    "category": "livestock",
+    "barn_type": "hutch",
+    "product_id": "rabbit_fur",
+    "product_name": "兔毛",
+    "can_rare_color": true,
+    "buy_price": 1500
+  },
+  {
+    "id": "horse",
+    "name": "马",
+    "category": "livestock",
+    "barn_type": "stable",
+    "product_id": "none",
+    "product_name": "坐骑（无每日产物）",
+    "can_rare_color": true,
+    "buy_price": 10000
+  },
+  {
+    "id": "donkey",
+    "name": "驴",
+    "category": "livestock",
+    "barn_type": "stable",
+    "product_id": "none",
+    "product_name": "坐骑（无每日产物）",
+    "can_rare_color": true,
+    "buy_price": 5000
+  },
+  {
+    "id": "yellow_cattle",
+    "name": "黄牛",
+    "category": "livestock",
+    "barn_type": "barn",
+    "product_id": "beef",
+    "product_name": "黄牛肉",
+    "can_rare_color": true,
+    "buy_price": 5500
+  },
+  {
+    "id": "yak",
+    "name": "牦牛",
+    "category": "livestock",
+    "barn_type": "barn",
+    "product_id": "yak_milk",
+    "product_name": "牦牛奶",
+    "can_rare_color": true,
+    "buy_price": 7500
+  },
+  {
+    "id": "camel",
+    "name": "骆驼",
+    "category": "livestock",
+    "barn_type": "stable",
+    "product_id": "camel_wool",
+    "product_name": "驼绒",
+    "can_rare_color": true,
+    "buy_price": 12000
+  },
+  {
+    "id": "bee",
+    "name": "蜜蜂",
+    "category": "special",
+    "barn_type": "bee_box",
+    "product_id": "honey",
+    "product_name": "蜂蜜",
+    "can_rare_color": false,
+    "buy_price": 800
+  },
+  {
+    "id": "silkworm",
+    "name": "蚕",
+    "category": "special",
+    "barn_type": "silkworm_room",
+    "product_id": "cocoon",
+    "product_name": "蚕茧",
+    "can_rare_color": false,
+    "buy_price": 600
+  },
+  {
+    "id": "ostrich",
+    "name": "鸵鸟",
+    "category": "special",
+    "barn_type": "ostrich_shed",
+    "product_id": "ostrich_egg",
+    "product_name": "鸵鸟蛋",
+    "can_rare_color": true,
+    "buy_price": 8000
+  },
+  {
+    "id": "alpaca",
+    "name": "羊驼",
+    "category": "special",
+    "barn_type": "barn",
+    "product_id": "alpaca_wool",
+    "product_name": "羊驼毛",
+    "can_rare_color": true,
+    "buy_price": 7000
+  },
+  {
+    "id": "deer",
+    "name": "小鹿",
+    "category": "special",
+    "barn_type": "deer_pen",
+    "product_id": "antler",
+    "product_name": "鹿茸",
+    "can_rare_color": true,
+    "buy_price": 12000
+  },
+  {
+    "id": "pigeon",
+    "name": "鸽子",
+    "category": "special",
+    "barn_type": "pigeon_house",
+    "product_id": "pigeon_egg",
+    "product_name": "鸽蛋",
+    "can_rare_color": true,
+    "buy_price": 700
+  },
+  {
+    "id": "snail",
+    "name": "蜗牛",
+    "category": "special",
+    "barn_type": "snail_box",
+    "product_id": "snail_mucus",
+    "product_name": "蜗牛黏液",
+    "can_rare_color": false,
+    "buy_price": 400
+  },
+  {
+    "id": "earthworm",
+    "name": "蚯蚓",
+    "category": "special",
+    "barn_type": "worm_box",
+    "product_id": "worm_cast",
+    "product_name": "蚯蚓肥",
+    "can_rare_color": false,
+    "buy_price": 200
+  }
+]

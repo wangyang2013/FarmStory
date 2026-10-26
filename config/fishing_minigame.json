@@ -1,0 +1,20 @@
+{
+  "time_limit": 25.0,
+  "start_progress": 0.25,
+  "reel_progress_per_sec": 0.24,
+  "idle_progress_decay": 0.04,
+  "tension_rise_per_sec": 0.32,
+  "tension_fall_per_sec": 0.30,
+  "tension_pull_multiplier": 1.2,
+  "pull_progress_loss": 0.09,
+  "fish_pull_min_interval": 1.4,
+  "fish_pull_max_interval": 3.0,
+  "fish_pull_duration_min": 0.4,
+  "fish_pull_duration_max": 1.0,
+  "fish_pull_base_strength": 0.6,
+  "weight_reference_max": 30.0,
+  "weight_difficulty_scale": 0.45,
+  "rod_reel_bonus_per_tier": 0.03,
+  "heavy_weight_multiplier": 1.25,
+  "giant_visual_scale": 1.35
+}

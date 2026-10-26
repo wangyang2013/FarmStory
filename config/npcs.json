@@ -1,0 +1,515 @@
+{
+  "npcs": [
+    {
+      "id": "alex",
+      "name": "亚历克斯",
+      "role": "医生",
+      "gender": "male",
+      "birthday": {
+        "season": "spring",
+        "day": 12
+      },
+      "likes": [
+        "milk",
+        "cheese"
+      ],
+      "dislikes": [
+        "stone"
+      ],
+      "look": {
+        "hair": "side_part",
+        "hair_color": "black",
+        "skin": "fair",
+        "face": "square",
+        "outfit": "plain",
+        "outfit_color": "gray"
+      },
+      "line": "诊所里总能见到我，记得照顾好自己。",
+      "spot": {
+        "x": 25.8,
+        "y": 21.4
+      },
+      "marriageable": true
+    },
+    {
+      "id": "ethan",
+      "name": "伊森",
+      "role": "渔夫",
+      "gender": "male",
+      "birthday": {
+        "season": "summer",
+        "day": 8
+      },
+      "likes": [
+        "carp",
+        "crucian"
+      ],
+      "dislikes": [
+        "granite"
+      ],
+      "look": {
+        "hair": "buzz",
+        "hair_color": "brown",
+        "skin": "wheat",
+        "face": "round",
+        "outfit": "work",
+        "outfit_color": "blue"
+      },
+      "line": "今天的鱼很活跃，要不要试试手气？",
+      "spot": {
+        "x": 27.0,
+        "y": 21.4
+      },
+      "marriageable": true
+    },
+    {
+      "id": "liam",
+      "name": "利亚姆",
+      "role": "铁匠儿子",
+      "gender": "male",
+      "birthday": {
+        "season": "autumn",
+        "day": 20
+      },
+      "likes": [
+        "copper",
+        "iron"
+      ],
+      "dislikes": [
+        "slime_gel"
+      ],
+      "look": {
+        "hair": "short",
+        "hair_color": "red",
+        "skin": "healthy",
+        "face": "square",
+        "outfit": "work",
+        "outfit_color": "red"
+      },
+      "line": "父亲说，好铁要慢慢锻。",
+      "spot": {
+        "x": 28.2,
+        "y": 21.4
+      },
+      "marriageable": true
+    },
+    {
+      "id": "emma",
+      "name": "艾玛",
+      "role": "花店女儿",
+      "gender": "female",
+      "birthday": {
+        "season": "spring",
+        "day": 24
+      },
+      "likes": [
+        "tulip",
+        "sunflower"
+      ],
+      "dislikes": [
+        "fish"
+      ],
+      "look": {
+        "hair": "twin_tails",
+        "hair_color": "pink",
+        "skin": "fair",
+        "face": "round",
+        "outfit": "dress",
+        "outfit_color": "pink"
+      },
+      "line": "花开的时候，整个镇子都亮起来了。",
+      "spot": {
+        "x": 29.4,
+        "y": 21.4
+      },
+      "marriageable": true
+    },
+    {
+      "id": "olivia",
+      "name": "奥利维亚",
+      "role": "旅店老板女儿",
+      "gender": "female",
+      "birthday": {
+        "season": "summer",
+        "day": 15
+      },
+      "likes": [
+        "cheese",
+        "wine"
+      ],
+      "dislikes": [
+        "stone"
+      ],
+      "look": {
+        "hair": "long",
+        "hair_color": "blonde",
+        "skin": "natural",
+        "face": "long",
+        "outfit": "dress",
+        "outfit_color": "purple"
+      },
+      "line": "旅店今晚有热汤，要来坐坐吗？",
+      "spot": {
+        "x": 30.6,
+        "y": 21.4
+      },
+      "marriageable": true
+    },
+    {
+      "id": "sophia",
+      "name": "索菲亚",
+      "role": "图书管理员",
+      "gender": "female",
+      "birthday": {
+        "season": "winter",
+        "day": 5
+      },
+      "likes": [
+        "sapphire",
+        "wine"
+      ],
+      "dislikes": [
+        "pork"
+      ],
+      "look": {
+        "hair": "bun",
+        "hair_color": "purple",
+        "skin": "fair",
+        "face": "round",
+        "outfit": "dress",
+        "outfit_color": "blue"
+      },
+      "line": "书里夹着一片去年的银杏叶。",
+      "spot": {
+        "x": 31.8,
+        "y": 21.4
+      },
+      "marriageable": true
+    },
+    {
+      "id": "tom",
+      "name": "汤姆",
+      "role": "种子店老板",
+      "gender": "male",
+      "birthday": {
+        "season": "spring",
+        "day": 8
+      },
+      "likes": [
+        "egg",
+        "bread"
+      ],
+      "dislikes": [
+        "slime_gel"
+      ],
+      "look": {
+        "hair": "short",
+        "hair_color": "brown",
+        "skin": "natural",
+        "face": "round",
+        "outfit": "work",
+        "outfit_color": "green"
+      },
+      "line": "种子要挑饱满的，土地不会骗人。",
+      "spot": {
+        "x": 33.0,
+        "y": 21.4
+      },
+      "marriageable": false
+    },
+    {
+      "id": "john",
+      "name": "约翰",
+      "role": "酒馆老板",
+      "gender": "male",
+      "birthday": {
+        "season": "summer",
+        "day": 3
+      },
+      "likes": [
+        "beer",
+        "wheat"
+      ],
+      "dislikes": [
+        "stone"
+      ],
+      "look": {
+        "hair": "side_part",
+        "hair_color": "black",
+        "skin": "deep",
+        "face": "square",
+        "outfit": "work",
+        "outfit_color": "yellow"
+      },
+      "line": "来一杯？今天的第一桶刚开封。",
+      "spot": {
+        "x": 25.8,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "mike",
+      "name": "迈克",
+      "role": "铁匠",
+      "gender": "male",
+      "birthday": {
+        "season": "autumn",
+        "day": 12
+      },
+      "likes": [
+        "pork",
+        "potato"
+      ],
+      "dislikes": [
+        "flower"
+      ],
+      "look": {
+        "hair": "buzz",
+        "hair_color": "red",
+        "skin": "deep",
+        "face": "square",
+        "outfit": "work",
+        "outfit_color": "gray"
+      },
+      "line": "炉火正旺，有事直说。",
+      "spot": {
+        "x": 27.0,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "mary",
+      "name": "玛丽",
+      "role": "动物店老板",
+      "gender": "female",
+      "birthday": {
+        "season": "spring",
+        "day": 19
+      },
+      "likes": [
+        "milk",
+        "strawberry"
+      ],
+      "dislikes": [
+        "stone"
+      ],
+      "look": {
+        "hair": "bun",
+        "hair_color": "blonde",
+        "skin": "natural",
+        "face": "round",
+        "outfit": "dress",
+        "outfit_color": "teal"
+      },
+      "line": "小羊今天又长胖了一点。",
+      "spot": {
+        "x": 28.2,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "bob",
+      "name": "鲍勃",
+      "role": "渔夫",
+      "gender": "male",
+      "birthday": {
+        "season": "winter",
+        "day": 10
+      },
+      "likes": [
+        "topmouth_gudgeon",
+        "carp"
+      ],
+      "dislikes": [
+        "granite"
+      ],
+      "look": {
+        "hair": "buzz",
+        "hair_color": "gray",
+        "skin": "wheat",
+        "face": "long",
+        "outfit": "work",
+        "outfit_color": "blue"
+      },
+      "line": "风平浪静的早晨最适合下网。",
+      "spot": {
+        "x": 29.4,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "lisa",
+      "name": "丽莎",
+      "role": "杂货店老板",
+      "gender": "female",
+      "birthday": {
+        "season": "summer",
+        "day": 22
+      },
+      "likes": [
+        "tulip",
+        "chrysanthemum"
+      ],
+      "dislikes": [
+        "slime_gel"
+      ],
+      "look": {
+        "hair": "long",
+        "hair_color": "brown",
+        "skin": "natural",
+        "face": "round",
+        "outfit": "dress",
+        "outfit_color": "yellow"
+      },
+      "line": "店里新到了一批好看的杯子。",
+      "spot": {
+        "x": 30.6,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "david",
+      "name": "大卫",
+      "role": "矿场管理员",
+      "gender": "male",
+      "birthday": {
+        "season": "autumn",
+        "day": 8
+      },
+      "likes": [
+        "copper",
+        "amethyst"
+      ],
+      "dislikes": [
+        "flower"
+      ],
+      "look": {
+        "hair": "buzz",
+        "hair_color": "black",
+        "skin": "healthy",
+        "face": "square",
+        "outfit": "work",
+        "outfit_color": "gray"
+      },
+      "line": "矿洞深处的声音，要仔细听。",
+      "spot": {
+        "x": 31.8,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "anna",
+      "name": "安娜",
+      "role": "护士",
+      "gender": "female",
+      "birthday": {
+        "season": "winter",
+        "day": 15
+      },
+      "likes": [
+        "carrot",
+        "cucumber"
+      ],
+      "dislikes": [
+        "stone"
+      ],
+      "look": {
+        "hair": "bun",
+        "hair_color": "white",
+        "skin": "fair",
+        "face": "round",
+        "outfit": "plain",
+        "outfit_color": "pink"
+      },
+      "line": "记得按时吃饭，别总熬夜。",
+      "spot": {
+        "x": 33.0,
+        "y": 22.6
+      },
+      "marriageable": false
+    },
+    {
+      "id": "peter",
+      "name": "彼得",
+      "role": "镇长",
+      "gender": "male",
+      "birthday": {
+        "season": "spring",
+        "day": 28
+      },
+      "likes": [
+        "egg",
+        "milk"
+      ],
+      "dislikes": [
+        "slime_gel"
+      ],
+      "look": {
+        "hair": "side_part",
+        "hair_color": "gray",
+        "skin": "natural",
+        "face": "square",
+        "outfit": "retro",
+        "outfit_color": "purple"
+      },
+      "line": "镇上最近很热闹，都是托你的福。",
+      "spot": {
+        "x": 34.6,
+        "y": 22.0
+      },
+      "marriageable": false
+    },
+    {
+      "id": "grace",
+      "name": "格蕾丝",
+      "role": "裁缝",
+      "gender": "female",
+      "birthday": {
+        "season": "autumn",
+        "day": 25
+      },
+      "likes": [
+        "wool",
+        "cloth"
+      ],
+      "dislikes": [
+        "stone"
+      ],
+      "look": {
+        "hair": "long",
+        "hair_color": "red",
+        "skin": "natural",
+        "face": "long",
+        "outfit": "dress",
+        "outfit_color": "teal"
+      },
+      "line": "这块布的颜色，很像晚霞。",
+      "spot": {
+        "x": 35.4,
+        "y": 23.4
+      },
+      "marriageable": false
+    }
+  ],
+  "schedule": {
+    "home_y": 22.0,
+    "home_left_x": 3.5,
+    "home_right_x": 60.5,
+    "walk_speed": 26.0,
+    "hours": {
+      "start": 6,
+      "work": 8,
+      "lunch": 12,
+      "work_end": 14,
+      "evening": 18,
+      "home": 20,
+      "sleep": 22
+    }
+  }
+}

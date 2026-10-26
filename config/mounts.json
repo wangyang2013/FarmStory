@@ -1,0 +1,175 @@
+{
+  "horse": {
+    "name": "马",
+    "speed": 200,
+    "sprint_speed": 280,
+    "max_stamina": 100,
+    "sprint_cost_per_sec": 10,
+    "stamina_regen_per_min": 5,
+    "price": 8000,
+    "stored_in": "stable",
+    "rideable": true,
+    "min_friendship": 30,
+    "cargo_capacity": 0,
+    "default_names": [
+      "小白",
+      "枣红",
+      "追风"
+    ],
+    "rider_offset": -13.5,
+    "weather_penalty_ratio": 0.2
+  },
+  "cow": {
+    "name": "牛",
+    "speed": 120,
+    "sprint_speed": 150,
+    "max_stamina": 80,
+    "sprint_cost_per_sec": 8,
+    "stamina_regen_per_min": 4,
+    "price": 0,
+    "stored_in": "barn",
+    "rideable": true,
+    "min_friendship": 60,
+    "min_age_days": 3,
+    "cargo_capacity": 0,
+    "rider_offset": -11.5,
+    "weather_penalty_ratio": 0.2
+  },
+  "donkey": {
+    "name": "驴",
+    "speed": 160,
+    "sprint_speed": 210,
+    "max_stamina": 90,
+    "sprint_cost_per_sec": 9,
+    "stamina_regen_per_min": 5,
+    "price": 4000,
+    "stored_in": "stable",
+    "rideable": true,
+    "min_friendship": 30,
+    "cargo_capacity": 8,
+    "default_names": [
+      "小灰",
+      "灰灰",
+      "倔倔"
+    ],
+    "rider_offset": -11.5,
+    "weather_penalty_ratio": 0.2
+  },
+  "camel": {
+    "name": "骆驼",
+    "speed": 140,
+    "sprint_speed": 190,
+    "max_stamina": 150,
+    "sprint_cost_per_sec": 8,
+    "stamina_regen_per_min": 6,
+    "price": 10000,
+    "stored_in": "stable",
+    "rideable": true,
+    "min_friendship": 40,
+    "cargo_capacity": 12,
+    "min_building_level": 2,
+    "weather_immune": [
+      "storm",
+      "blizzard"
+    ],
+    "default_names": [
+      "沙舟",
+      "驼铃"
+    ],
+    "rider_offset": -16.0
+  },
+  "ostrich": {
+    "name": "鸵鸟",
+    "speed": 170,
+    "sprint_speed": 320,
+    "max_stamina": 60,
+    "sprint_cost_per_sec": 15,
+    "stamina_regen_per_min": 4,
+    "price": 12000,
+    "stored_in": "ostrich_house",
+    "rideable": true,
+    "min_friendship": 40,
+    "cargo_capacity": 0,
+    "weather_penalty": [
+      "storm",
+      "blizzard"
+    ],
+    "terrain_bonus": [
+      "sand",
+      "grassland"
+    ],
+    "default_names": [
+      "飞毛腿",
+      "疾风"
+    ],
+    "rider_offset": -17.0,
+    "weather_penalty_ratio": 0.3,
+    "terrain_bonus_ratio": 0.1
+  },
+  "bicycle": {
+    "name": "自行车",
+    "speed": 180,
+    "sprint_speed": 220,
+    "max_stamina": 0,
+    "sprint_cooldown": 2,
+    "price": 3000,
+    "stored_in": "bike_shed",
+    "rideable": true,
+    "cargo_capacity": 4,
+    "default_names": [
+      "红色通勤车"
+    ],
+    "rider_offset": -12.0,
+    "weather_penalty_ratio": 0.2
+  },
+  "alpaca": {
+    "name": "羊驼",
+    "speed": 150,
+    "sprint_speed": 200,
+    "max_stamina": 90,
+    "sprint_cost_per_sec": 8,
+    "stamina_regen_per_min": 5,
+    "price": 6000,
+    "stored_in": "barn",
+    "rideable": true,
+    "min_friendship": 40,
+    "cargo_capacity": 4,
+    "friendship_gain_feed": 8,
+    "friendship_gain_pet": 5,
+    "terrain_bonus": [
+      "grassland"
+    ],
+    "calm_wildlife": true,
+    "default_names": [
+      "棉花糖",
+      "云朵"
+    ],
+    "rider_offset": -11.0,
+    "weather_penalty_ratio": 0.2,
+    "terrain_bonus_ratio": 0.05
+  },
+  "tricycle": {
+    "name": "三轮车",
+    "speed": 130,
+    "sprint_speed": 160,
+    "max_stamina": 0,
+    "sprint_cooldown": 3,
+    "price": 5000,
+    "stored_in": "bike_shed",
+    "rideable": true,
+    "cargo_capacity": 10,
+    "terrain_bonus": [
+      "stone_path"
+    ],
+    "terrain_penalty": [
+      "mud"
+    ],
+    "default_names": [
+      "小货车",
+      "三角"
+    ],
+    "rider_offset": -12.5,
+    "weather_penalty_ratio": 0.2,
+    "terrain_bonus_ratio": 0.1
+  }
+}

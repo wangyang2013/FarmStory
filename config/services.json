@@ -1,0 +1,6 @@
+{
+  "hospital": {
+    "treatment_price": 200,
+    "animal_treatment_price": 100
+  }
+}

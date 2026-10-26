@@ -1,0 +1,132 @@
+{
+  "machines": [
+    {
+      "id": "cheese_maker",
+      "name": "奶酪机",
+      "price": 1000,
+      "description": "牛奶 → 奶酪 / 黄油"
+    },
+    {
+      "id": "loom",
+      "name": "纺织机",
+      "price": 1500,
+      "description": "羊毛 → 布料"
+    },
+    {
+      "id": "pickling_barrel",
+      "name": "腌菜桶",
+      "price": 800,
+      "description": "任意 3 份作物 → 腌菜"
+    },
+    {
+      "id": "wine_barrel",
+      "name": "酿酒桶",
+      "price": 2000,
+      "description": "葡萄 / 小麦 → 葡萄酒 / 啤酒"
+    },
+    {
+      "id": "workbench",
+      "name": "加工台",
+      "price": 1200,
+      "description": "猪肉 → 香肠 / 蜂蜜 → 瓶装蜂蜜"
+    }
+  ],
+  "products": [
+    {
+      "id": "cheese",
+      "name": "奶酪",
+      "machine": "cheese_maker",
+      "category": "processed",
+      "inputs": {
+        "milk": 2
+      },
+      "multiplier": 3.0,
+      "minutes": 180,
+      "base_price": 900
+    },
+    {
+      "id": "butter",
+      "name": "黄油",
+      "machine": "cheese_maker",
+      "category": "processed",
+      "inputs": {
+        "milk": 1
+      },
+      "multiplier": 2.0,
+      "minutes": 120,
+      "base_price": 300
+    },
+    {
+      "id": "cloth",
+      "name": "布料",
+      "machine": "loom",
+      "category": "processed",
+      "inputs": {
+        "wool": 2
+      },
+      "multiplier": 4.0,
+      "minutes": 240,
+      "base_price": 1440
+    },
+    {
+      "id": "pickled_veggies",
+      "name": "腌菜",
+      "machine": "pickling_barrel",
+      "category": "processed",
+      "inputs": {
+        "any_crop": 3
+      },
+      "multiplier": 2.5,
+      "minutes": 2880,
+      "base_price": 300
+    },
+    {
+      "id": "wine",
+      "name": "葡萄酒",
+      "machine": "wine_barrel",
+      "category": "processed",
+      "inputs": {
+        "grape": 3
+      },
+      "multiplier": 5.0,
+      "minutes": 10080,
+      "base_price": 900
+    },
+    {
+      "id": "beer",
+      "name": "啤酒",
+      "machine": "wine_barrel",
+      "category": "processed",
+      "inputs": {
+        "wheat": 3
+      },
+      "multiplier": 4.0,
+      "minutes": 4320,
+      "base_price": 240
+    },
+    {
+      "id": "honey_bottle",
+      "name": "瓶装蜂蜜",
+      "machine": "workbench",
+      "category": "processed",
+      "inputs": {
+        "honey": 2
+      },
+      "multiplier": 1.8,
+      "minutes": 1440,
+      "base_price": 720
+    },
+    {
+      "id": "sausage",
+      "name": "香肠",
+      "machine": "workbench",
+      "category": "processed",
+      "inputs": {
+        "pork": 2
+      },
+      "multiplier": 2.0,
+      "minutes": 120,
+      "base_price": 220
+    }
+  ]
+}

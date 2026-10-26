@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pottery_shard",
+    "name": "陶器碎片",
+    "desc": "带着绳纹的古老陶片，可能是某个村落的遗物。",
+    "price": 30,
+    "min_floor": 1,
+    "max_floor": 30,
+    "chance": 0.05
+  },
+  {
+    "id": "ancient_coin",
+    "name": "古代钱币",
+    "desc": "边缘磨损的铜币，上面的文字已经无法辨认。",
+    "price": 50,
+    "min_floor": 11,
+    "max_floor": 50,
+    "chance": 0.045
+  },
+  {
+    "id": "stone_tool",
+    "name": "石器",
+    "desc": "粗糙的打制石器，曾经是某人赖以生存的工具。",
+    "price": 40,
+    "min_floor": 1,
+    "max_floor": 40,
+    "chance": 0.04
+  },
+  {
+    "id": "amber",
+    "name": "琥珀",
+    "desc": "半透明的金色树脂化石，里面封着一只小虫。",
+    "price": 100,
+    "min_floor": 21,
+    "max_floor": 70,
+    "chance": 0.035
+  },
+  {
+    "id": "ancient_doll",
+    "name": "古代玩偶",
+    "desc": "泥土烧制的小人偶，脸上还留着淡淡的笑容。",
+    "price": 60,
+    "min_floor": 26,
+    "max_floor": 60,
+    "chance": 0.035
+  },
+  {
+    "id": "fossil",
+    "name": "动物化石",
+    "desc": "岩层中保存下来的骨骼印痕，年代十分久远。",
+    "price": 80,
+    "min_floor": 41,
+    "max_floor": 80,
+    "chance": 0.035
+  },
+  {
+    "id": "skeleton",
+    "name": "人类骨骼",
+    "desc": "完整的古代人类骨架，博物馆的镇馆之宝之一。",
+    "price": 90,
+    "min_floor": 61,
+    "max_floor": 90,
+    "chance": 0.03
+  },
+  {
+    "id": "dinosaur_egg",
+    "name": "恐龙蛋",
+    "desc": "石化程度极高的蛋，表面有细密的裂纹。",
+    "price": 150,
+    "min_floor": 81,
+    "max_floor": 100,
+    "chance": 0.025
+  }
+]
